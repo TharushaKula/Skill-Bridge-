@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
     title: 'For Recruiters — Precision Talent Matching | SkillBridge',
@@ -10,10 +11,23 @@ export default function RecruitersPage() {
         <>
             {/* Hero */}
             <section style={{ position: 'relative', minHeight: '70vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-                <div className="glow-orb" style={{ width: 500, height: 500, top: '-5%', left: '20%', background: 'rgba(6,182,212,0.08)' }} />
-                <div className="glow-orb" style={{ width: 400, height: 400, bottom: '5%', right: '15%', background: 'rgba(139,92,246,0.08)' }} />
-                <div className="bg-grid" style={{ position: 'absolute', inset: 0 }} />
-                <div className="section animate-fade-up" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 140 }}>
+                {/* Background Image & Overlay */}
+                <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+                    <Image
+                        src="/images/RecruitersPage.png"
+                        alt="SkillBridge For Recruiters"
+                        fill
+                        priority
+                        style={{ objectFit: 'cover', objectPosition: 'center' }}
+                        quality={90}
+                    />
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,15,0.85) 0%, rgba(6,6,15,0.6) 40%, rgba(6,6,15,0.95) 100%)' }} />
+                </div>
+
+                <div className="glow-orb" style={{ width: 500, height: 500, top: '-5%', left: '20%', background: 'rgba(6,182,212,0.15)', zIndex: 1 }} />
+                <div className="glow-orb" style={{ width: 400, height: 400, bottom: '5%', right: '15%', background: 'rgba(139,92,246,0.15)', zIndex: 1 }} />
+                <div className="bg-grid" style={{ position: 'absolute', inset: 0, zIndex: 1, opacity: 0.5 }} />
+                <div className="section animate-fade-up" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 140, zIndex: 2 }}>
                     <div className="section-label">For Recruiters</div>
                     <h1 className="section-title" style={{ maxWidth: 760 }}>
                         <span className="gradient-text">Precision Talent Matching</span>

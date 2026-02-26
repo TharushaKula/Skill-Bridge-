@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
     title: 'The Engine — SkillBridge Multi-Agent Architecture',
@@ -10,9 +11,22 @@ export default function EnginePage() {
         <>
             {/* Hero */}
             <section style={{ position: 'relative', minHeight: '70vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-                <div className="glow-orb" style={{ width: 500, height: 500, top: '-5%', left: '40%', background: 'rgba(139,92,246,0.1)' }} />
-                <div className="bg-grid" style={{ position: 'absolute', inset: 0 }} />
-                <div className="section animate-fade-up" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 140 }}>
+                {/* Background Image & Overlay */}
+                <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+                    <Image
+                        src="/images/EnginePage-AgentPipeline.png"
+                        alt="SkillBridge Agent Pipeline"
+                        fill
+                        priority
+                        style={{ objectFit: 'cover', objectPosition: 'center' }}
+                        quality={90}
+                    />
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,15,0.85) 0%, rgba(6,6,15,0.6) 40%, rgba(6,6,15,0.95) 100%)' }} />
+                </div>
+
+                <div className="glow-orb" style={{ width: 500, height: 500, top: '-5%', left: '40%', background: 'rgba(139,92,246,0.15)', zIndex: 1 }} />
+                <div className="bg-grid" style={{ position: 'absolute', inset: 0, zIndex: 1, opacity: 0.5 }} />
+                <div className="section animate-fade-up" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 140, zIndex: 2 }}>
                     <div className="section-label">Under the Hood</div>
                     <h1 className="section-title" style={{ maxWidth: 760 }}>
                         The <span className="gradient-text">Multi-Agent Engine</span> Powering Your Growth

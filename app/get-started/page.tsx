@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function GetStartedPage() {
     const [formType, setFormType] = useState<'individual' | 'enterprise'>('individual');
@@ -38,10 +39,23 @@ export default function GetStartedPage() {
     return (
         <>
             {/* Hero */}
-            <section style={{ position: 'relative', overflow: 'hidden' }}>
-                <div className="glow-orb" style={{ width: 500, height: 500, top: '-10%', left: '50%', transform: 'translateX(-50%)', background: 'rgba(139,92,246,0.1)' }} />
-                <div className="bg-grid" style={{ position: 'absolute', inset: 0 }} />
-                <div className="section animate-fade-up" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 140, paddingBottom: 40 }}>
+            <section style={{ position: 'relative', overflow: 'hidden', minHeight: '450px', display: 'flex', alignItems: 'center' }}>
+                {/* Background Image & Overlay */}
+                <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+                    <Image
+                        src="/images/GetStartedPageHeader.png"
+                        alt="SkillBridge Get Started"
+                        fill
+                        priority
+                        style={{ objectFit: 'cover', objectPosition: 'center' }}
+                        quality={90}
+                    />
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,15,0.85) 0%, rgba(6,6,15,0.6) 40%, rgba(6,6,15,0.95) 100%)' }} />
+                </div>
+
+                <div className="glow-orb" style={{ width: 500, height: 500, top: '-10%', left: '50%', transform: 'translateX(-50%)', background: 'rgba(139,92,246,0.15)', zIndex: 1 }} />
+                <div className="bg-grid" style={{ position: 'absolute', inset: 0, zIndex: 1, opacity: 0.5 }} />
+                <div className="section animate-fade-up" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 140, paddingBottom: 40, zIndex: 2 }}>
                     <div className="section-label">Get Started</div>
                     <h1 className="section-title" style={{ maxWidth: 600 }}>
                         Begin Your <span className="gradient-text">Career Evolution</span>
