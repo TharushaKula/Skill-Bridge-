@@ -60,15 +60,20 @@ export default function EnginePage() {
                                     ))}
                                 </div>
                             </div>
-                            <div className="glass-card animate-fade-up-delay-1" style={{ padding: 32, fontFamily: 'var(--font-code)', fontSize: '0.82rem' }}>
-                                <div style={{ color: 'var(--text-muted)', marginBottom: 8 }}>// extraction_agent.process()</div>
-                                <div style={{ color: '#34d399' }}>input: <span style={{ color: 'var(--text-secondary)' }}>&quot;resume_v3.pdf&quot;</span></div>
-                                <div style={{ marginTop: 12, color: 'var(--violet-400)' }}>extracting skills...</div>
-                                <div style={{ marginTop: 4, color: 'var(--text-secondary)' }}>├─ &quot;Python&quot; → proficiency: <span style={{ color: '#34d399' }}>0.92</span></div>
-                                <div style={{ color: 'var(--text-secondary)' }}>├─ &quot;Machine Learning&quot; → proficiency: <span style={{ color: '#fbbf24' }}>0.78</span></div>
-                                <div style={{ color: 'var(--text-secondary)' }}>├─ &quot;Data Visualization&quot; → proficiency: <span style={{ color: '#fbbf24' }}>0.71</span></div>
-                                <div style={{ color: 'var(--text-secondary)' }}>└─ &quot;Cloud Architecture&quot; → proficiency: <span style={{ color: '#fb7185' }}>0.34</span></div>
-                                <div style={{ marginTop: 12, color: '#34d399' }}>✓ 23 skills extracted, semantic profile built</div>
+                            <div className="animate-fade-up-delay-1 huly-window">
+                                <div className="huly-window-header">
+                                    <div className="huly-dot" style={{ background: '#ff5f56' }} />
+                                    <div className="huly-dot" style={{ background: '#ffbd2e' }} />
+                                    <div className="huly-dot" style={{ background: '#27c93f' }} />
+                                </div>
+                                <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
+                                    <Image
+                                        src="/images/platform-images/CV-Analyzer-page.png"
+                                        alt="CV Analyzer Platform Screenshot"
+                                        fill
+                                        style={{ objectFit: 'contain', objectPosition: 'top' }}
+                                    />
+                                </div>
                             </div>
                         </div>
 
@@ -137,25 +142,20 @@ export default function EnginePage() {
                                     ))}
                                 </div>
                             </div>
-                            <div className="glass-card animate-fade-up-delay-1" style={{ padding: 32 }}>
-                                <div style={{ fontWeight: 700, fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: 16 }}>Generated Roadmap</div>
-                                {[
-                                    { phase: 'Phase 1', title: 'Cloud Fundamentals', weeks: '1–3', status: 'active' },
-                                    { phase: 'Phase 2', title: 'AWS Solutions Architect', weeks: '4–8', status: 'upcoming' },
-                                    { phase: 'Phase 3', title: 'MLOps & CI/CD', weeks: '9–14', status: 'upcoming' },
-                                    { phase: 'Phase 4', title: 'System Design Mastery', weeks: '15–20', status: 'upcoming' },
-                                ].map((p, i) => (
-                                    <div key={p.phase} style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14 }}>
-                                        <div style={{ width: 32, height: 32, borderRadius: '50%', background: p.status === 'active' ? 'var(--gradient-violet)' : 'rgba(255,255,255,0.05)', border: p.status === 'active' ? 'none' : '1px solid var(--glass-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.72rem', fontWeight: 700, color: p.status === 'active' ? '#fff' : 'var(--text-muted)' }}>
-                                            {i + 1}
-                                        </div>
-                                        <div style={{ flex: 1 }}>
-                                            <div style={{ fontSize: '0.9rem', fontWeight: 600, color: p.status === 'active' ? 'var(--text-primary)' : 'var(--text-secondary)' }}>{p.title}</div>
-                                            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Weeks {p.weeks}</div>
-                                        </div>
-                                        {p.status === 'active' && <span style={{ fontSize: '0.7rem', padding: '3px 10px', borderRadius: 'var(--radius-full)', background: 'rgba(139,92,246,0.15)', color: 'var(--violet-400)', fontWeight: 600 }}>Active</span>}
-                                    </div>
-                                ))}
+                            <div className="animate-fade-up-delay-1 huly-window">
+                                <div className="huly-window-header">
+                                    <div className="huly-dot" style={{ background: '#ff5f56' }} />
+                                    <div className="huly-dot" style={{ background: '#ffbd2e' }} />
+                                    <div className="huly-dot" style={{ background: '#27c93f' }} />
+                                </div>
+                                <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
+                                    <Image
+                                        src="/images/platform-images/roadmap-page.png"
+                                        alt="Skill Roadmap Platform Screenshot"
+                                        fill
+                                        style={{ objectFit: 'contain', objectPosition: 'top' }}
+                                    />
+                                </div>
                             </div>
                         </div>
 

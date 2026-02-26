@@ -483,6 +483,12 @@ body {
   background: rgba(255, 255, 255, 0.05);
 }
 
+.navbar-links a.active {
+  color: var(--text-primary) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  font-weight: 500;
+}
+
 .navbar-cta {
   padding: 8px 20px !important;
   background: var(--gradient-violet) !important;

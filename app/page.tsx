@@ -81,7 +81,7 @@ export default function Home() {
       <section style={{ position: 'relative', overflow: 'hidden' }}>
         <div className="glow-orb" style={{ width: 500, height: 500, top: '20%', left: '-10%', background: 'rgba(139,92,246,0.06)' }} />
         <div className="section">
-          <div style={{ textAlign: 'center', marginBottom: 64 }}>
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <div className="section-label">The Problem We Solve</div>
             <h2 className="section-title" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
               The Talent-Demand Mismatch is <span className="gradient-text">Widening</span>
