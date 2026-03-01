@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Search, BarChart, Map, TrendingUp, X, Check, User, Building2 } from 'lucide-react';
 
 export const metadata = {
   title: 'SkillBridge — Transform Your Career with Multi-Agent AI',
@@ -94,14 +95,15 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
             {/* Before card */}
             <div className="glass-card" style={{ padding: 32 }}>
-              <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#fb7185', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 16 }}>
-                ✕ The Old Way
+              <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#fb7185', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 6 }}>
+                <X size={16} /> THE OLD WAY
               </div>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: 12 }}>Keyword-Based Screening</h3>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {['Static resume parsing', 'Binary skill matching', 'No growth potential analysis', 'Black-box decisions', 'One-size-fits-all advice'].map((item) => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                    <span style={{ color: '#fb7185' }}>✕</span> {item}
+                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+                    <X size={18} color="#fb7185" style={{ flexShrink: 0, marginTop: 2 }} />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -109,14 +111,15 @@ export default function Home() {
 
             {/* After card */}
             <div className="glass-card" style={{ padding: 32, borderColor: 'rgba(139,92,246,0.3)' }}>
-              <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#34d399', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 16 }}>
-                ✓ The SkillBridge Way
+              <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#34d399', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 6 }}>
+                <Check size={16} /> THE SKILLBRIDGE WAY
               </div>
               <h3 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: 12 }}>Semantic AI Understanding</h3>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {['Deep semantic skill extraction', 'Multi-dimensional gap analysis', 'Dynamic career trajectory mapping', 'Explainable AI reasoning', 'Personalized adaptive roadmaps'].map((item) => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                    <span style={{ color: '#34d399' }}>✓</span> {item}
+                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+                    <Check size={18} color="#34d399" style={{ flexShrink: 0, marginTop: 2 }} />
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -141,13 +144,13 @@ export default function Home() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20 }}>
             {[
-              { icon: '🔍', name: 'Extraction Agent', desc: 'Parses resumes with NLP to build rich, semantic skill profiles beyond keywords.', color: '#8b5cf6' },
-              { icon: '📊', name: 'Gap Analysis Agent', desc: 'Compares your profile against market demands using high-dimensional embeddings.', color: '#06b6d4' },
-              { icon: '🗺️', name: 'Roadmap Agent', desc: 'Generates personalized, adaptive learning paths with curated resources.', color: '#34d399' },
-              { icon: '📈', name: 'Tracker Agent', desc: 'Monitors progress and recalibrates recommendations based on real-time data.', color: '#fbbf24' },
+              { icon: <Search size={28} color="#8b5cf6" />, name: 'Extraction Agent', desc: 'Parses resumes with NLP to build rich, semantic skill profiles beyond keywords.', color: '#8b5cf6' },
+              { icon: <BarChart size={28} color="#06b6d4" />, name: 'Gap Analysis Agent', desc: 'Compares your profile against market demands using high-dimensional embeddings.', color: '#06b6d4' },
+              { icon: <Map size={28} color="#34d399" />, name: 'Roadmap Agent', desc: 'Generates personalized, adaptive learning paths with curated resources.', color: '#34d399' },
+              { icon: <TrendingUp size={28} color="#fbbf24" />, name: 'Tracker Agent', desc: 'Monitors progress and recalibrates recommendations based on real-time data.', color: '#fbbf24' },
             ].map((agent) => (
               <div key={agent.name} className="glass-card" style={{ padding: 28, textAlign: 'center' }}>
-                <div style={{ width: 56, height: 56, borderRadius: 'var(--radius-md)', background: `${agent.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', fontSize: '1.5rem', border: `1px solid ${agent.color}30` }}>
+                <div style={{ width: 56, height: 56, borderRadius: 'var(--radius-md)', background: `${agent.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', border: `1px solid ${agent.color}30` }}>
                   {agent.icon}
                 </div>
                 <h3 style={{ fontSize: '1.05rem', fontWeight: 700, marginBottom: 8 }}>{agent.name}</h3>
@@ -178,7 +181,9 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 28 }}>
             {/* Individuals */}
             <div className="glass-card" style={{ padding: 40 }}>
-              <div style={{ fontSize: '2rem', marginBottom: 16 }}>🧑‍💻</div>
+              <div style={{ marginBottom: 16, color: '#8b5cf6' }}>
+                <User size={36} />
+              </div>
               <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: 12 }}>For Individuals</h3>
               <p style={{ color: 'var(--text-secondary)', marginBottom: 24, lineHeight: 1.6 }}>
                 Get an adaptive, AI-driven career roadmap that evolves with you.
@@ -186,8 +191,9 @@ export default function Home() {
               </p>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 28 }}>
                 {['Adaptive Learning Roadmap', 'Real-time milestone tracking', 'Curated course recommendations', 'Skill gap visualization'].map((f) => (
-                  <li key={f} style={{ display: 'flex', gap: 10, fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                    <span style={{ color: '#34d399' }}>✓</span> {f}
+                  <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                    <Check size={18} color="#34d399" style={{ flexShrink: 0, marginTop: 2 }} />
+                    <span>{f}</span>
                   </li>
                 ))}
               </ul>
@@ -198,15 +204,18 @@ export default function Home() {
 
             {/* Recruiters */}
             <div className="glass-card" style={{ padding: 40 }}>
-              <div style={{ fontSize: '2rem', marginBottom: 16 }}>🏢</div>
+              <div style={{ marginBottom: 16, color: '#06b6d4' }}>
+                <Building2 size={36} />
+              </div>
               <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: 12 }}>For Recruiters</h3>
               <p style={{ color: 'var(--text-secondary)', marginBottom: 24, lineHeight: 1.6 }}>
                 Precision talent matching that goes beyond keywords. Understand every candidate through explainable AI rankings your team can trust.
               </p>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 28 }}>
                 {['Precision Talent Matching', 'Explainable AI rankings', 'Bulk candidate analysis', 'Fairness-aware screening'].map((f) => (
-                  <li key={f} style={{ display: 'flex', gap: 10, fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                    <span style={{ color: '#06b6d4' }}>✓</span> {f}
+                  <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                    <Check size={18} color="#06b6d4" style={{ flexShrink: 0, marginTop: 2 }} />
+                    <span>{f}</span>
                   </li>
                 ))}
               </ul>

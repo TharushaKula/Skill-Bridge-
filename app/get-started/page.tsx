@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { User, Building2 } from 'lucide-react';
 
 export default function GetStartedPage() {
     const [formType, setFormType] = useState<'individual' | 'enterprise'>('individual');
@@ -88,7 +89,9 @@ export default function GetStartedPage() {
                                     color: formType === 'individual' ? '#fff' : 'var(--text-secondary)',
                                 }}
                             >
-                                🧑‍💻 Start Audit
+                                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                    <User size={16} /> Start Audit
+                                </div>
                             </button>
                             <button
                                 onClick={() => setFormType('enterprise')}
@@ -105,7 +108,9 @@ export default function GetStartedPage() {
                                     color: formType === 'enterprise' ? '#fff' : 'var(--text-secondary)',
                                 }}
                             >
-                                🏢 Request Demo
+                                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                    <Building2 size={16} /> Request Demo
+                                </div>
                             </button>
                         </div>
                     </div>

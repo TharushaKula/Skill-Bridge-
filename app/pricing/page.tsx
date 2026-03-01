@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Check, Star } from 'lucide-react';
 
 export const metadata = {
     title: 'Pricing — The Investment | SkillBridge',
@@ -51,11 +52,11 @@ export default function PricingPage() {
                                 Perfect for getting started. Upload your CV and see what SkillBridge can reveal.
                             </div>
                             <ul className="pricing-features">
-                                <li><span className="check">✓</span> Basic CV analysis with NLP extraction</li>
-                                <li><span className="check">✓</span> 5 identified skill gaps</li>
-                                <li><span className="check">✓</span> Static learning roadmap (one-time)</li>
-                                <li><span className="check">✓</span> Basic skill profile visualization</li>
-                                <li><span className="check">✓</span> Community support</li>
+                                <li><Check size={16} className="check" /> Basic CV analysis with NLP extraction</li>
+                                <li><Check size={16} className="check" /> 5 identified skill gaps</li>
+                                <li><Check size={16} className="check" /> Static learning roadmap (one-time)</li>
+                                <li><Check size={16} className="check" /> Basic skill profile visualization</li>
+                                <li><Check size={16} className="check" /> Community support</li>
                             </ul>
                             <Link href="/get-started" className="btn-secondary" style={{ width: '100%' }}>
                                 Start Free →
@@ -75,13 +76,13 @@ export default function PricingPage() {
                                 The complete career acceleration toolkit. Dynamic roadmaps that evolve with you and the market.
                             </div>
                             <ul className="pricing-features">
-                                <li><span className="check">✓</span> <strong>Unlimited</strong> gap analysis runs</li>
-                                <li><span className="check">✓</span> <strong>Dynamic Roadmap Recalibration</strong> based on real-time market data</li>
-                                <li><span className="check">✓</span> Full RAG-driven resource library (Coursera, Udemy, YouTube, MIT OCW)</li>
-                                <li><span className="check">✓</span> Milestone tracking & achievement badges</li>
-                                <li><span className="check">✓</span> Progress analytics & learning insights</li>
-                                <li><span className="check">✓</span> Smart notifications & plateau detection</li>
-                                <li><span className="check">✓</span> Priority support</li>
+                                <li><Check size={16} className="check" /> <strong>Unlimited</strong> gap analysis runs</li>
+                                <li><Check size={16} className="check" /> <strong>Dynamic Roadmap Recalibration</strong> based on real-time market data</li>
+                                <li><Check size={16} className="check" /> Full RAG-driven resource library (Coursera, Udemy, YouTube, MIT OCW)</li>
+                                <li><Check size={16} className="check" /> Milestone tracking & achievement badges</li>
+                                <li><Check size={16} className="check" /> Progress analytics & learning insights</li>
+                                <li><Check size={16} className="check" /> Smart notifications & plateau detection</li>
+                                <li><Check size={16} className="check" /> Priority support</li>
                             </ul>
                             <Link href="/get-started" className="btn-primary" style={{ width: '100%' }}>
                                 Start Pro Trial →
@@ -97,14 +98,14 @@ export default function PricingPage() {
                                 For recruiters, teams, and academic institutes. Precision talent matching at scale.
                             </div>
                             <ul className="pricing-features">
-                                <li><span className="check">✓</span> Everything in Pro</li>
-                                <li><span className="check">✓</span> <strong>Bulk candidate ranking</strong> & processing</li>
-                                <li><span className="check">✓</span> <strong>Explainable AI</strong> ranking reports</li>
-                                <li><span className="check">✓</span> Domain adaptation for specific industries</li>
-                                <li><span className="check">✓</span> Fairness & bias auditing reports</li>
-                                <li><span className="check">✓</span> ATS integration via REST API</li>
-                                <li><span className="check">✓</span> Dedicated account manager</li>
-                                <li><span className="check">✓</span> SOC 2 compliant data handling</li>
+                                <li><Check size={16} className="check" /> Everything in Pro</li>
+                                <li><Check size={16} className="check" /> <strong>Bulk candidate ranking</strong> & processing</li>
+                                <li><Check size={16} className="check" /> <strong>Explainable AI</strong> ranking reports</li>
+                                <li><Check size={16} className="check" /> Domain adaptation for specific industries</li>
+                                <li><Check size={16} className="check" /> Fairness & bias auditing reports</li>
+                                <li><Check size={16} className="check" /> ATS integration via REST API</li>
+                                <li><Check size={16} className="check" /> Dedicated account manager</li>
+                                <li><Check size={16} className="check" /> SOC 2 compliant data handling</li>
                             </ul>
                             <Link href="/get-started" className="btn-secondary" style={{ width: '100%' }}>
                                 Contact Sales →
@@ -131,7 +132,11 @@ export default function PricingPage() {
                                     <tr style={{ borderBottom: '1px solid var(--glass-border)' }}>
                                         <th style={{ padding: '16px 24px', textAlign: 'left', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Feature</th>
                                         <th style={{ padding: '16px 24px', textAlign: 'center', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Explorer</th>
-                                        <th style={{ padding: '16px 24px', textAlign: 'center', fontSize: '0.85rem', fontWeight: 600, color: 'var(--violet-400)', background: 'rgba(139,92,246,0.05)' }}>Pro ⭐</th>
+                                        <th style={{ padding: '16px 24px', textAlign: 'center', fontSize: '0.85rem', fontWeight: 600, color: 'var(--violet-400)', background: 'rgba(139,92,246,0.05)' }}>
+                                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+                                                Pro <Star size={14} fill="currentColor" />
+                                            </div>
+                                        </th>
                                         <th style={{ padding: '16px 24px', textAlign: 'center', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)' }}>Enterprise</th>
                                     </tr>
                                 </thead>
@@ -140,14 +145,14 @@ export default function PricingPage() {
                                         { feature: 'CV/Resume Analysis', explorer: '1 scan', pro: 'Unlimited', enterprise: 'Unlimited' },
                                         { feature: 'Skill Gap Identification', explorer: 'Up to 5', pro: 'Unlimited', enterprise: 'Unlimited' },
                                         { feature: 'Learning Roadmap', explorer: 'Static', pro: 'Dynamic + Recalibration', enterprise: 'Dynamic + Recalibration' },
-                                        { feature: 'Resource Library (RAG)', explorer: '—', pro: '✓ Full Access', enterprise: '✓ Full Access' },
-                                        { feature: 'Milestone Tracking', explorer: '—', pro: '✓', enterprise: '✓' },
-                                        { feature: 'Progress Analytics', explorer: '—', pro: '✓', enterprise: '✓' },
-                                        { feature: 'Bulk Candidate Ranking', explorer: '—', pro: '—', enterprise: '✓' },
-                                        { feature: 'Explainable AI Reports', explorer: '—', pro: '—', enterprise: '✓' },
-                                        { feature: 'Domain Adaptation', explorer: '—', pro: '—', enterprise: '✓' },
-                                        { feature: 'Bias Auditing', explorer: '—', pro: '—', enterprise: '✓' },
-                                        { feature: 'ATS Integration', explorer: '—', pro: '—', enterprise: '✓' },
+                                        { feature: 'Resource Library (RAG)', explorer: '—', pro: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4 }}><Check size={14} /> Full Access</div>, enterprise: <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 4 }}><Check size={14} /> Full Access</div> },
+                                        { feature: 'Milestone Tracking', explorer: '—', pro: <div style={{ display: 'flex', justifyContent: 'center' }}><Check size={16} /></div>, enterprise: <div style={{ display: 'flex', justifyContent: 'center' }}><Check size={16} /></div> },
+                                        { feature: 'Progress Analytics', explorer: '—', pro: <div style={{ display: 'flex', justifyContent: 'center' }}><Check size={16} /></div>, enterprise: <div style={{ display: 'flex', justifyContent: 'center' }}><Check size={16} /></div> },
+                                        { feature: 'Bulk Candidate Ranking', explorer: '—', pro: '—', enterprise: <div style={{ display: 'flex', justifyContent: 'center' }}><Check size={16} /></div> },
+                                        { feature: 'Explainable AI Reports', explorer: '—', pro: '—', enterprise: <div style={{ display: 'flex', justifyContent: 'center' }}><Check size={16} /></div> },
+                                        { feature: 'Domain Adaptation', explorer: '—', pro: '—', enterprise: <div style={{ display: 'flex', justifyContent: 'center' }}><Check size={16} /></div> },
+                                        { feature: 'Bias Auditing', explorer: '—', pro: '—', enterprise: <div style={{ display: 'flex', justifyContent: 'center' }}><Check size={16} /></div> },
+                                        { feature: 'ATS Integration', explorer: '—', pro: '—', enterprise: <div style={{ display: 'flex', justifyContent: 'center' }}><Check size={16} /></div> },
                                         { feature: 'Support', explorer: 'Community', pro: 'Priority', enterprise: 'Dedicated Manager' },
                                     ].map((row) => (
                                         <tr key={row.feature} style={{ borderBottom: '1px solid rgba(255,255,255,0.03)' }}>

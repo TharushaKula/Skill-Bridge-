@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { Zap } from 'lucide-react';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,7 +20,9 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-inner">
         <Link href="/" className="navbar-logo">
-          <div className="navbar-logo-icon">⚡</div>
+          <div className="navbar-logo-icon">
+            <Zap size={20} fill="currentColor" />
+          </div>
           SkillBridge
         </Link>
 

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Zap } from 'lucide-react';
 
 export default function Footer() {
     return (
@@ -7,7 +8,9 @@ export default function Footer() {
                 <div className="footer-grid">
                     <div className="footer-brand">
                         <Link href="/" className="navbar-logo" style={{ marginBottom: 4 }}>
-                            <div className="navbar-logo-icon">⚡</div>
+                            <div className="navbar-logo-icon">
+                                <Zap size={20} fill="currentColor" />
+                            </div>
                             SkillBridge
                         </Link>
                         <p>

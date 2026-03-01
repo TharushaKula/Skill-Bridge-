@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Search, ClipboardList, Scale, Target, Package, Factory, BarChart, Link as LinkIcon, Lock, TrendingUp } from 'lucide-react';
 
 export const metadata = {
     title: 'For Recruiters — Precision Talent Matching | SkillBridge',
@@ -57,13 +58,13 @@ export default function RecruitersPage() {
                             </p>
                             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 14 }}>
                                 {[
-                                    { icon: '🔍', title: 'Semantic Skill Matching', desc: 'Understands that "React" and "Frontend Development" are deeply related.' },
-                                    { icon: '📋', title: 'Explainable Rankings', desc: 'Full transparency on why each candidate scored the way they did.' },
-                                    { icon: '⚖️', title: 'Fairness Auditing', desc: 'Built-in bias detection and fairness-aware training reports.' },
-                                    { icon: '🎯', title: 'Precision Over Volume', desc: 'Quality matches, not just more resumes in your inbox.' },
+                                    { icon: <Search size={20} color="#8b5cf6" />, title: 'Semantic Skill Matching', desc: 'Understands that "React" and "Frontend Development" are deeply related.' },
+                                    { icon: <ClipboardList size={20} color="#06b6d4" />, title: 'Explainable Rankings', desc: 'Full transparency on why each candidate scored the way they did.' },
+                                    { icon: <Scale size={20} color="#34d399" />, title: 'Fairness Auditing', desc: 'Built-in bias detection and fairness-aware training reports.' },
+                                    { icon: <Target size={20} color="#fbbf24" />, title: 'Precision Over Volume', desc: 'Quality matches, not just more resumes in your inbox.' },
                                 ].map((f) => (
                                     <li key={f.title} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
-                                        <span style={{ fontSize: '1.1rem', flexShrink: 0, marginTop: 2 }}>{f.icon}</span>
+                                        <span style={{ flexShrink: 0, marginTop: 4 }}>{f.icon}</span>
                                         <div>
                                             <div style={{ fontWeight: 600, fontSize: '0.95rem', marginBottom: 2 }}>{f.title}</div>
                                             <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{f.desc}</div>
@@ -126,15 +127,15 @@ export default function RecruitersPage() {
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
                         {[
-                            { icon: '📦', title: 'Bulk Candidate Processing', desc: 'Upload hundreds of CVs at once. Our agents process and rank them in parallel — no manual review needed.', color: '#8b5cf6' },
-                            { icon: '🏭', title: 'Domain Adaptation', desc: 'Customize the AI for specific industries — healthcare, fintech, engineering — with domain-specific skill taxonomies.', color: '#06b6d4' },
-                            { icon: '📊', title: 'Bias Auditing Reports', desc: 'Automated fairness reports that demonstrate compliance with diversity and inclusion requirements.', color: '#34d399' },
-                            { icon: '🔗', title: 'ATS Integration', desc: 'Seamlessly integrates with your existing Applicant Tracking System through our REST API.', color: '#fbbf24' },
-                            { icon: '🔒', title: 'Data Privacy First', desc: 'SOC 2 compliant. Candidate data is encrypted at rest and in transit, with configurable data retention.', color: '#fb7185' },
-                            { icon: '📈', title: 'Hiring Analytics', desc: 'Track time-to-hire, candidate pipeline quality, and matching accuracy across all open positions.', color: '#a78bfa' },
+                            { icon: <Package size={24} color="#8b5cf6" />, title: 'Bulk Candidate Processing', desc: 'Upload hundreds of CVs at once. Our agents process and rank them in parallel — no manual review needed.', color: '#8b5cf6' },
+                            { icon: <Factory size={24} color="#06b6d4" />, title: 'Domain Adaptation', desc: 'Customize the AI for specific industries — healthcare, fintech, engineering — with domain-specific skill taxonomies.', color: '#06b6d4' },
+                            { icon: <BarChart size={24} color="#34d399" />, title: 'Bias Auditing Reports', desc: 'Automated fairness reports that demonstrate compliance with diversity and inclusion requirements.', color: '#34d399' },
+                            { icon: <LinkIcon size={24} color="#fbbf24" />, title: 'ATS Integration', desc: 'Seamlessly integrates with your existing Applicant Tracking System through our REST API.', color: '#fbbf24' },
+                            { icon: <Lock size={24} color="#fb7185" />, title: 'Data Privacy First', desc: 'SOC 2 compliant. Candidate data is encrypted at rest and in transit, with configurable data retention.', color: '#fb7185' },
+                            { icon: <TrendingUp size={24} color="#a78bfa" />, title: 'Hiring Analytics', desc: 'Track time-to-hire, candidate pipeline quality, and matching accuracy across all open positions.', color: '#a78bfa' },
                         ].map((f) => (
                             <div key={f.title} className="glass-card" style={{ padding: 28 }}>
-                                <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: `${f.color}15`, border: `1px solid ${f.color}30`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', marginBottom: 16 }}>
+                                <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: `${f.color}15`, border: `1px solid ${f.color}30`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
                                     {f.icon}
                                 </div>
                                 <h3 style={{ fontSize: '1.05rem', fontWeight: 700, marginBottom: 8 }}>{f.title}</h3>

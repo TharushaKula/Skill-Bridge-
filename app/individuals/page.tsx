@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Target, TrendingUp, Brain, RefreshCw, Trophy, BarChart, Bell } from 'lucide-react';
 
 export const metadata = {
     title: 'For Individuals — Adaptive Learning Roadmaps | SkillBridge',
@@ -56,13 +57,13 @@ export default function IndividualsPage() {
                             </p>
                             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 14 }}>
                                 {[
-                                    { icon: '🎯', title: 'Your Progress', desc: 'Completed a milestone? Your roadmap instantly adapts.' },
-                                    { icon: '📈', title: 'Market Shifts', desc: 'New skills in demand? They surface automatically.' },
-                                    { icon: '🧠', title: 'Learning Patterns', desc: 'The AI learns how you learn and optimizes accordingly.' },
-                                    { icon: '🔄', title: 'Real-Time Data', desc: 'Dynamic recalibration, not annual reviews.' },
+                                    { icon: <Target size={20} color="#34d399" />, title: 'Your Progress', desc: 'Completed a milestone? Your roadmap instantly adapts.' },
+                                    { icon: <TrendingUp size={20} color="#06b6d4" />, title: 'Market Shifts', desc: 'New skills in demand? They surface automatically.' },
+                                    { icon: <Brain size={20} color="#8b5cf6" />, title: 'Learning Patterns', desc: 'The AI learns how you learn and optimizes accordingly.' },
+                                    { icon: <RefreshCw size={20} color="#fbbf24" />, title: 'Real-Time Data', desc: 'Dynamic recalibration, not annual reviews.' },
                                 ].map((f) => (
                                     <li key={f.title} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
-                                        <span style={{ fontSize: '1.2rem', flexShrink: 0, marginTop: 2 }}>{f.icon}</span>
+                                        <span style={{ flexShrink: 0, marginTop: 4 }}>{f.icon}</span>
                                         <div>
                                             <div style={{ fontWeight: 600, fontSize: '0.95rem', marginBottom: 2 }}>{f.title}</div>
                                             <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{f.desc}</div>
@@ -124,13 +125,13 @@ export default function IndividualsPage() {
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
                         {[
-                            { icon: '🏆', title: 'Achievement Badges', desc: 'Earn verifiable badges for every milestone completed — shareable on LinkedIn and your portfolio.', color: '#fbbf24' },
-                            { icon: '📊', title: 'Progress Analytics', desc: 'Detailed analytics on learning speed, skill acquisition rate, and comparison to industry benchmarks.', color: '#8b5cf6' },
-                            { icon: '🔔', title: 'Smart Notifications', desc: 'Get nudges when you plateau, celebrations when you level up, and alerts when market demands shift.', color: '#06b6d4' },
-                            { icon: '🎯', title: 'Goal Alignment', desc: 'Set your target role. Every recommendation is aligned to get you there as efficiently as possible.', color: '#34d399' },
+                            { icon: <Trophy size={24} color="#fbbf24" />, title: 'Achievement Badges', desc: 'Earn verifiable badges for every milestone completed — shareable on LinkedIn and your portfolio.', color: '#fbbf24' },
+                            { icon: <BarChart size={24} color="#8b5cf6" />, title: 'Progress Analytics', desc: 'Detailed analytics on learning speed, skill acquisition rate, and comparison to industry benchmarks.', color: '#8b5cf6' },
+                            { icon: <Bell size={24} color="#06b6d4" />, title: 'Smart Notifications', desc: 'Get nudges when you plateau, celebrations when you level up, and alerts when market demands shift.', color: '#06b6d4' },
+                            { icon: <Target size={24} color="#34d399" />, title: 'Goal Alignment', desc: 'Set your target role. Every recommendation is aligned to get you there as efficiently as possible.', color: '#34d399' },
                         ].map((f) => (
                             <div key={f.title} className="glass-card" style={{ padding: 28 }}>
-                                <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: `${f.color}15`, border: `1px solid ${f.color}30`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', marginBottom: 16 }}>
+                                <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: `${f.color}15`, border: `1px solid ${f.color}30`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
                                     {f.icon}
                                 </div>
                                 <h3 style={{ fontSize: '1.05rem', fontWeight: 700, marginBottom: 8 }}>{f.title}</h3>

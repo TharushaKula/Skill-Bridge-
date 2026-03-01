@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Search, BarChart, Map, TrendingUp } from 'lucide-react';
 
 export const metadata = {
     title: 'The Engine — SkillBridge Multi-Agent Architecture',
@@ -46,7 +47,9 @@ export default function EnginePage() {
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', padding: '60px 0' }} className="engine-row">
                             <div className="animate-fade-up">
                                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                                    <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'rgba(139,92,246,0.12)', border: '1px solid rgba(139,92,246,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem' }}>🔍</div>
+                                    <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'rgba(139,92,246,0.12)', border: '1px solid rgba(139,92,246,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <Search size={24} color="#8b5cf6" />
+                                    </div>
                                     <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--violet-400)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Agent 01</span>
                                 </div>
                                 <h3 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: 12 }}>Extraction Agent</h3>
@@ -103,7 +106,9 @@ export default function EnginePage() {
                             </div>
                             <div className="animate-fade-up-delay-1" style={{ order: 1 }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                                    <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'rgba(6,182,212,0.12)', border: '1px solid rgba(6,182,212,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem' }}>📊</div>
+                                    <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'rgba(6,182,212,0.12)', border: '1px solid rgba(6,182,212,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <BarChart size={24} color="#06b6d4" />
+                                    </div>
                                     <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--cyan-400)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Agent 02</span>
                                 </div>
                                 <h3 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: 12 }}>Gap Analysis Agent</h3>
@@ -128,7 +133,9 @@ export default function EnginePage() {
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', padding: '60px 0' }} className="engine-row">
                             <div className="animate-fade-up">
                                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                                    <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'rgba(52,211,153,0.12)', border: '1px solid rgba(52,211,153,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem' }}>🗺️</div>
+                                    <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'rgba(52,211,153,0.12)', border: '1px solid rgba(52,211,153,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <Map size={24} color="#34d399" />
+                                    </div>
                                     <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#34d399', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Agent 03</span>
                                 </div>
                                 <h3 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: 12 }}>Roadmap Agent</h3>
@@ -187,7 +194,9 @@ export default function EnginePage() {
                             </div>
                             <div className="animate-fade-up-delay-1" style={{ order: 1 }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                                    <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem' }}>📈</div>
+                                    <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                        <TrendingUp size={24} color="#fbbf24" />
+                                    </div>
                                     <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#fbbf24', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Agent 04</span>
                                 </div>
                                 <h3 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: 12 }}>Tracker Agent</h3>
