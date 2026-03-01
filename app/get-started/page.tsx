@@ -122,88 +122,93 @@ export default function GetStartedPage() {
                         </h2>
                         <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: 32, lineHeight: 1.5 }}>
                             {formType === 'individual'
-                                ? "Upload your CV and our AI agents will analyze your skills, identify gaps, and generate a preview roadmap — completely free."
+                                ? "Fill out the form below to begin your personalized career evolution journey."
                                 : "Get a personalized walkthrough of SkillBridge's enterprise features including bulk ranking, domain adaptation, and bias auditing."}
                         </p>
 
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-                                <div className="form-group">
-                                    <label className="form-label">First Name</label>
-                                    <input type="text" className="form-input" placeholder="Jane" required />
+                            {formType === 'individual' ? (
+                                <div style={{ width: '100%', display: 'flex', justifyContent: 'center', borderRadius: 'var(--radius-md)', overflow: 'hidden' }}>
+                                    <iframe
+                                        src="https://docs.google.com/forms/d/e/1FAIpQLSf5D48OvoFEY9tsc8ohdxQ05qmR1TBV4XWwpV6WyJSojvaKow/viewform?embedded=true"
+                                        width="100%"
+                                        height="826"
+                                        frameBorder="0"
+                                        marginHeight={0}
+                                        marginWidth={0}
+                                        style={{ border: 'none' }}
+                                    >
+                                        Loading…
+                                    </iframe>
                                 </div>
-                                <div className="form-group">
-                                    <label className="form-label">Last Name</label>
-                                    <input type="text" className="form-input" placeholder="Doe" required />
-                                </div>
-                            </div>
-
-                            <div className="form-group">
-                                <label className="form-label">Email</label>
-                                <input type="email" className="form-input" placeholder="jane@example.com" required />
-                            </div>
-
-                            {formType === 'enterprise' && (
+                            ) : (
                                 <>
-                                    <div className="form-group">
-                                        <label className="form-label">Company</label>
-                                        <input type="text" className="form-input" placeholder="Acme Corp" required />
+                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+                                        <div className="form-group">
+                                            <label className="form-label">First Name</label>
+                                            <input type="text" className="form-input" placeholder="Jane" required />
+                                        </div>
+                                        <div className="form-group">
+                                            <label className="form-label">Last Name</label>
+                                            <input type="text" className="form-input" placeholder="Doe" required />
+                                        </div>
                                     </div>
+
                                     <div className="form-group">
-                                        <label className="form-label">Team Size</label>
-                                        <select className="form-select" required>
-                                            <option value="">Select team size</option>
-                                            <option value="1-10">1–10</option>
-                                            <option value="11-50">11–50</option>
-                                            <option value="51-200">51–200</option>
-                                            <option value="201-1000">201–1,000</option>
-                                            <option value="1000+">1,000+</option>
-                                        </select>
+                                        <label className="form-label">Email</label>
+                                        <input type="email" className="form-input" placeholder="jane@example.com" required />
                                     </div>
-                                    <div className="form-group">
-                                        <label className="form-label">Industry</label>
-                                        <select className="form-select" required>
-                                            <option value="">Select industry</option>
-                                            <option value="tech">Technology</option>
-                                            <option value="finance">Finance & Banking</option>
-                                            <option value="healthcare">Healthcare</option>
-                                            <option value="education">Education</option>
-                                            <option value="consulting">Consulting</option>
-                                            <option value="other">Other</option>
-                                        </select>
-                                    </div>
+
+                                    {formType === 'enterprise' && (
+                                        <>
+                                            <div className="form-group">
+                                                <label className="form-label">Company</label>
+                                                <input type="text" className="form-input" placeholder="Acme Corp" required />
+                                            </div>
+                                            <div className="form-group">
+                                                <label className="form-label">Team Size</label>
+                                                <select className="form-select" required>
+                                                    <option value="">Select team size</option>
+                                                    <option value="1-10">1–10</option>
+                                                    <option value="11-50">11–50</option>
+                                                    <option value="51-200">51–200</option>
+                                                    <option value="201-1000">201–1,000</option>
+                                                    <option value="1000+">1,000+</option>
+                                                </select>
+                                            </div>
+                                            <div className="form-group">
+                                                <label className="form-label">Industry</label>
+                                                <select className="form-select" required>
+                                                    <option value="">Select industry</option>
+                                                    <option value="tech">Technology</option>
+                                                    <option value="finance">Finance & Banking</option>
+                                                    <option value="healthcare">Healthcare</option>
+                                                    <option value="education">Education</option>
+                                                    <option value="consulting">Consulting</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                            </div>
+
+                                            <div className="form-group">
+                                                <label className="form-label">Tell us about your needs</label>
+                                                <textarea
+                                                    className="form-textarea"
+                                                    placeholder="What challenges are you facing with talent acquisition?"
+                                                    rows={4}
+                                                />
+                                            </div>
+
+                                            <button type="submit" className="btn-primary" style={{ width: '100%', padding: '16px', fontSize: '1rem', marginTop: 8 }}>
+                                                Request Demo →
+                                            </button>
+
+                                            <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textAlign: 'center', lineHeight: 1.5 }}>
+                                                We'll respond within 24 hours. No commitment required.
+                                            </p>
+                                        </>
+                                    )}
                                 </>
                             )}
-
-                            {formType === 'individual' && (
-                                <div className="form-group">
-                                    <label className="form-label">Target Role (Optional)</label>
-                                    <input type="text" className="form-input" placeholder="e.g. Senior ML Engineer" />
-                                </div>
-                            )}
-
-                            <div className="form-group">
-                                <label className="form-label">
-                                    {formType === 'individual' ? 'Anything else?' : 'Tell us about your needs'}
-                                </label>
-                                <textarea
-                                    className="form-textarea"
-                                    placeholder={formType === 'individual'
-                                        ? "Optional: Tell us about your career goals..."
-                                        : "What challenges are you facing with talent acquisition?"}
-                                    rows={4}
-                                />
-                            </div>
-
-                            <button type="submit" className="btn-primary" style={{ width: '100%', padding: '16px', fontSize: '1rem', marginTop: 8 }}>
-                                {formType === 'individual' ? 'Start Free Audit →' : 'Request Demo →'}
-                            </button>
-
-                            <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textAlign: 'center', lineHeight: 1.5 }}>
-                                {formType === 'individual'
-                                    ? 'No credit card required. Your data is encrypted and never shared.'
-                                    : "We'll respond within 24 hours. No commitment required."}
-                            </p>
                         </div>
                     </form>
                 </div>
