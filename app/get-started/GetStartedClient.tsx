@@ -84,84 +84,78 @@ export default function GetStartedClient() {
                 <h3>{flow === 'individual' ? 'Start Free Skill Audit' : 'Request Enterprise Demo'}</h3>
                 <p>
                   {flow === 'individual'
-                    ? 'Tell us where you are and where you want to go. We will generate your personalized roadmap.'
+                    ? 'Fill out the Google Form to begin your personalized skill audit.'
                     : 'Tell us about your team and hiring workflow. We will tailor a live walkthrough for your use case.'}
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className={styles.formGrid}>
-                <div className={styles.row2}>
-                  <label>
-                    First Name
-                    <input type="text" placeholder="Jane" required />
-                  </label>
-                  <label>
-                    Last Name
-                    <input type="text" placeholder="Doe" required />
-                  </label>
+              {flow === 'individual' ? (
+                <div className={styles.embedWrap}>
+                  <iframe
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSf5D48OvoFEY9tsc8ohdxQ05qmR1TBV4XWwpV6WyJSojvaKow/viewform?embedded=true"
+                    title="SkillBridge Individual Skill Audit Form"
+                    width="100%"
+                    height="860"
+                    frameBorder={0}
+                    marginHeight={0}
+                    marginWidth={0}
+                  >
+                    Loading...
+                  </iframe>
                 </div>
-
-                <label>
-                  Work Email
-                  <input type="email" placeholder="jane@example.com" required />
-                </label>
-
-                {flow === 'individual' ? (
-                  <>
+              ) : (
+                <form onSubmit={handleSubmit} className={styles.formGrid}>
+                  <div className={styles.row2}>
                     <label>
-                      Target Role
-                      <input type="text" placeholder="Machine Learning Engineer" required />
+                      First Name
+                      <input type="text" placeholder="Jane" required />
                     </label>
                     <label>
-                      Current Experience Level
+                      Last Name
+                      <input type="text" placeholder="Doe" required />
+                    </label>
+                  </div>
+
+                  <label>
+                    Work Email
+                    <input type="email" placeholder="jane@example.com" required />
+                  </label>
+                  <label>
+                    Company
+                    <input type="text" placeholder="Acme Corp" required />
+                  </label>
+                  <div className={styles.row2}>
+                    <label>
+                      Team Size
                       <select required defaultValue="">
-                        <option value="" disabled>Select level</option>
-                        <option value="student">Student</option>
-                        <option value="junior">Junior (0-2 years)</option>
-                        <option value="mid">Mid (3-5 years)</option>
-                        <option value="senior">Senior (6+ years)</option>
+                        <option value="" disabled>Select size</option>
+                        <option value="1-10">1-10</option>
+                        <option value="11-50">11-50</option>
+                        <option value="51-200">51-200</option>
+                        <option value="200+">200+</option>
                       </select>
                     </label>
-                  </>
-                ) : (
-                  <>
                     <label>
-                      Company
-                      <input type="text" placeholder="Acme Corp" required />
+                      Hiring Volume / Month
+                      <select required defaultValue="">
+                        <option value="" disabled>Select volume</option>
+                        <option value="1-10">1-10 roles</option>
+                        <option value="11-30">11-30 roles</option>
+                        <option value="31+">31+ roles</option>
+                      </select>
                     </label>
-                    <div className={styles.row2}>
-                      <label>
-                        Team Size
-                        <select required defaultValue="">
-                          <option value="" disabled>Select size</option>
-                          <option value="1-10">1-10</option>
-                          <option value="11-50">11-50</option>
-                          <option value="51-200">51-200</option>
-                          <option value="200+">200+</option>
-                        </select>
-                      </label>
-                      <label>
-                        Hiring Volume / Month
-                        <select required defaultValue="">
-                          <option value="" disabled>Select volume</option>
-                          <option value="1-10">1-10 roles</option>
-                          <option value="11-30">11-30 roles</option>
-                          <option value="31+">31+ roles</option>
-                        </select>
-                      </label>
-                    </div>
-                    <label>
-                      What challenge do you want to solve?
-                      <textarea rows={4} placeholder="e.g. reduce screening time and improve shortlist quality" required />
-                    </label>
-                  </>
-                )}
+                  </div>
+                  <label>
+                    What challenge do you want to solve?
+                    <textarea rows={4} placeholder="e.g. reduce screening time and improve shortlist quality" required />
+                  </label>
 
-                <button type="submit" className={styles.submitBtn}>
-                  {flow === 'individual' ? 'Start Free Analysis' : 'Request Demo'}
-                  <ArrowRight size={15} />
-                </button>
-              </form>
+                  <button type="submit" className={styles.submitBtn}>
+                    Request Demo
+                    <ArrowRight size={15} />
+                  </button>
+                </form>
+              )}
             </div>
           </section>
         ) : (
