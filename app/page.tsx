@@ -1,253 +1,261 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import { Search, BarChart, Map, TrendingUp, X, Check, User, Building2 } from 'lucide-react';
+import Link from 'next/link';
+import { Fraunces, Manrope } from 'next/font/google';
+import {
+  ArrowRight,
+  BriefcaseBusiness,
+  CheckCircle2,
+  Heart,
+  MessageCircle,
+  Send,
+  ShoppingCart,
+  Sparkles,
+  Target,
+} from 'lucide-react';
+import styles from './page.module.css';
+import CursorGlow from './components/CursorGlow';
 
-export const metadata = {
-  title: 'SkillBridge — Transform Your Career with Multi-Agent AI',
-  description: 'From static resumes to dynamic career evolution. SkillBridge bridges the talent-demand mismatch with AI-powered skill mapping, gap analysis, and adaptive learning roadmaps.',
-};
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-fraunces',
+});
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-manrope',
+});
 
 export default function Home() {
   return (
-    <>
-      {/* ═══ HERO ═══ */}
-      <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-        {/* Background Image & Overlay */}
-        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <Image
-            src="/images/HomeHero-Main-Banner.png"
-            alt="SkillBridge AI Career Evolution Gateway"
-            fill
-            priority
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
-            quality={90}
-          />
-          {/* Deep gradient overlay to ensure white text remains legible */}
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,15,0.85) 0%, rgba(6,6,15,0.6) 40%, rgba(6,6,15,0.95) 100%)' }} />
-        </div>
-
-        {/* Background effects */}
-        <div className="glow-orb" style={{ width: 600, height: 600, top: '-10%', left: '50%', transform: 'translateX(-50%)', background: 'rgba(139,92,246,0.15)', zIndex: 1 }} />
-        <div className="glow-orb" style={{ width: 400, height: 400, bottom: '10%', right: '-5%', background: 'rgba(6,182,212,0.1)', zIndex: 1 }} />
-        <div className="bg-grid" style={{ position: 'absolute', inset: 0, zIndex: 1, opacity: 0.5 }} />
-
-        <div className="section animate-fade-up" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 140, zIndex: 2 }}>
-          <div className="section-label animate-fade-up">
-            <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#34d399', animation: 'pulse-glow 2s infinite' }} />
-            Multi-Agent AI Platform
-          </div>
-
-          <h1 className="section-title animate-fade-up-delay-1" style={{ maxWidth: 820, fontSize: 'clamp(2.5rem, 6vw, 4.2rem)' }}>
-            Transform <span className="gradient-text">Static Resumes</span> Into{' '}
-            <span className="gradient-text">Dynamic Career Evolution</span>
-          </h1>
-
-          <p className="section-subtitle animate-fade-up-delay-2" style={{ maxWidth: 640, textAlign: 'center', marginBottom: 40, fontSize: '1.18rem' }}>
-            SkillBridge deploys specialized AI agents that map your skills, identify gaps, and build
-            adaptive learning roadmaps — bridging the talent-demand mismatch in real time.
+    <div className={`${styles.page} ${fraunces.variable} ${manrope.variable}`}>
+      <CursorGlow glowClassName={styles.cursorGlow} gridClassName={styles.cursorGrid} />
+      <div className={styles.shell}>
+        <section className={styles.hero}>
+          <h1>AI-Driven Career Growth Right Away</h1>
+          <p>
+            From resume to roadmap - map your skills, identify your gaps,
+            and grow with personalized learning plans.
           </p>
 
-          <div className="animate-fade-up-delay-3" style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link href="/get-started" className="btn-primary" style={{ padding: '16px 36px', fontSize: '1rem' }}>
-              Start Free Audit →
-            </Link>
-            <Link href="/engine" className="btn-secondary" style={{ padding: '16px 36px', fontSize: '1rem' }}>
-              See How It Works
-            </Link>
+          <div className={styles.ctaRow}>
+            <Link href="/get-started" className={styles.primaryPill}>Analyze Resume Free</Link>
+            <Link href="/engine" className={styles.secondaryPill}>See How It Works</Link>
           </div>
+        </section>
 
-          {/* Stats */}
-          <div className="stats-row animate-fade-up-delay-3" style={{ justifyContent: 'center', marginTop: 64 }}>
-            <div className="stat-item">
-              <div className="stat-value">94.7%</div>
-              <div className="stat-label">Matching Accuracy</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-value">3.2x</div>
-              <div className="stat-label">Faster Upskilling</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-value">50K+</div>
-              <div className="stat-label">Skills Mapped</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-value">92.3%</div>
-              <div className="stat-label">Recruiter Trust Score</div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <section className={styles.visualStage}>
+          <div className={styles.arcOne} />
+          <div className={styles.arcTwo} />
+          <div className={styles.arcThree} />
+          <div className={styles.glow} />
 
-      {/* ═══ PROBLEM → SOLUTION ═══ */}
-      <section style={{ position: 'relative', overflow: 'hidden' }}>
-        <div className="glow-orb" style={{ width: 500, height: 500, top: '20%', left: '-10%', background: 'rgba(139,92,246,0.06)' }} />
-        <div className="section">
-          <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div className="section-label">The Problem We Solve</div>
-            <h2 className="section-title" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
-              The Talent-Demand Mismatch is <span className="gradient-text">Widening</span>
-            </h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
-              87% of companies report skills gaps, yet traditional screening tools rely on simple keyword matching—missing the real potential in every candidate.
-            </p>
-          </div>
+          <article className={`${styles.card} ${styles.leftTopCard}`}>
+            <span className={styles.miniBadge}>Profile Scan</span>
+            <Image
+              src="/images/home_redesign/resume_icon_1772640118416.png"
+              alt="Resume skill extraction preview"
+              fill
+              className={styles.coverImage}
+            />
+          </article>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
-            {/* Before card */}
-            <div className="glass-card" style={{ padding: 32 }}>
-              <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#fb7185', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 6 }}>
-                <X size={16} /> THE OLD WAY
-              </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: 12 }}>Keyword-Based Screening</h3>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {['Static resume parsing', 'Binary skill matching', 'No growth potential analysis', 'Black-box decisions', 'One-size-fits-all advice'].map((item) => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                    <X size={18} color="#fb7185" style={{ flexShrink: 0, marginTop: 2 }} />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+          <article className={`${styles.card} ${styles.leftMidCard}`}>
+            <div className={styles.bars}>
+              <span />
+              <span />
+              <span />
+              <span />
             </div>
-
-            {/* After card */}
-            <div className="glass-card" style={{ padding: 32, borderColor: 'rgba(139,92,246,0.3)' }}>
-              <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#34d399', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 16, display: 'flex', alignItems: 'center', gap: 6 }}>
-                <Check size={16} /> THE SKILLBRIDGE WAY
-              </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: 12 }}>Semantic AI Understanding</h3>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {['Deep semantic skill extraction', 'Multi-dimensional gap analysis', 'Dynamic career trajectory mapping', 'Explainable AI reasoning', 'Personalized adaptive roadmaps'].map((item) => (
-                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-                    <Check size={18} color="#34d399" style={{ flexShrink: 0, marginTop: 2 }} />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <div>
+              <small>Skill Match</small>
+              <strong>94%</strong>
             </div>
-          </div>
-        </div>
-      </section>
+          </article>
 
-      {/* ═══ HOW IT WORKS (Quick) ═══ */}
-      <section style={{ position: 'relative' }}>
-        <div className="bg-dots" style={{ position: 'absolute', inset: 0 }} />
-        <div className="section" style={{ position: 'relative', zIndex: 1 }}>
-          <div style={{ textAlign: 'center', marginBottom: 64 }}>
-            <div className="section-label">How It Works</div>
-            <h2 className="section-title" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
-              Four Agents. One <span className="gradient-text">Unified Mission</span>
-            </h2>
-            <p className="section-subtitle" style={{ margin: '0 auto' }}>
-              Our specialized AI agents collaborate in real time to analyze, plan, and accelerate your career.
-            </p>
-          </div>
+          <article className={`${styles.card} ${styles.leftBottomCard}`}>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+            <span>★</span>
+          </article>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 20 }}>
-            {[
-              { icon: <Search size={28} color="#8b5cf6" />, name: 'Extraction Agent', desc: 'Parses resumes with NLP to build rich, semantic skill profiles beyond keywords.', color: '#8b5cf6' },
-              { icon: <BarChart size={28} color="#06b6d4" />, name: 'Gap Analysis Agent', desc: 'Compares your profile against market demands using high-dimensional embeddings.', color: '#06b6d4' },
-              { icon: <Map size={28} color="#34d399" />, name: 'Roadmap Agent', desc: 'Generates personalized, adaptive learning paths with curated resources.', color: '#34d399' },
-              { icon: <TrendingUp size={28} color="#fbbf24" />, name: 'Tracker Agent', desc: 'Monitors progress and recalibrates recommendations based on real-time data.', color: '#fbbf24' },
-            ].map((agent) => (
-              <div key={agent.name} className="glass-card" style={{ padding: 28, textAlign: 'center' }}>
-                <div style={{ width: 56, height: 56, borderRadius: 'var(--radius-md)', background: `${agent.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', border: `1px solid ${agent.color}30` }}>
-                  {agent.icon}
+          <div className={styles.phoneWrap}>
+            <div className={styles.phoneFrame}>
+              <div className={styles.notch} />
+              <Image
+                src="/images/home_redesign/professional_portrait_1772640102826.png"
+                alt="Candidate career profile"
+                fill
+                className={styles.coverImage}
+              />
+              <div className={styles.streamMeta}>
+                <div className={styles.streamUser}>
+                  <Image
+                    src="/images/home_redesign/professional_portrait_1772640102826.png"
+                    alt="Candidate avatar"
+                    width={28}
+                    height={28}
+                  />
+                  <span>Ava Johnson</span>
                 </div>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, marginBottom: 8 }}>{agent.name}</h3>
-                <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{agent.desc}</p>
+                <div className={styles.livePill}>AI</div>
               </div>
+            </div>
+          </div>
+
+          <article className={`${styles.card} ${styles.rightTopCard}`}>
+            <div>
+              <h3>42 <span>skills</span></h3>
+              <p>Mapped this week</p>
+              <div className={styles.priceTag}>3.2x faster</div>
+            </div>
+            <Image
+              src="/images/home_redesign/brain_icon_1772640133620.png"
+              alt="AI skill intelligence"
+              width={110}
+              height={110}
+              className={styles.rightTopImage}
+            />
+          </article>
+
+          <article className={`${styles.card} ${styles.rightBottomCard}`}>
+            <div className={styles.feedImageWrap}>
+              <Image
+                src="/images/home_redesign/recruiter_portrait_1772640152240.png"
+                alt="Recruiter compatibility"
+                fill
+                className={styles.coverImage}
+              />
+              <span className={styles.viewsTag}>98% Match</span>
+            </div>
+            <div className={styles.feedIcons}>
+              <Heart size={16} fill="currentColor" />
+              <MessageCircle size={16} />
+              <ShoppingCart size={16} />
+              <Send size={16} />
+            </div>
+          </article>
+        </section>
+
+        <section className={styles.brandStrip} aria-label="Trusted brands">
+          {['Talent Teams', 'EdTech Partners', 'Hiring Managers', 'Career Coaches', 'Bootcamps', 'Universities', 'HR Platforms', 'Recruiters', 'Learners'].map((brand) => (
+            <span key={brand}>{brand}</span>
+          ))}
+        </section>
+
+        <section className={styles.problemSection}>
+          <div className={styles.sectionIntro}>
+            <span className={styles.kicker}>The Problem</span>
+            <h2>Most resumes are static. Career growth is not.</h2>
+            <p>
+              Traditional hiring and upskilling workflows miss potential because they only
+              match keywords. SkillBridge uses multi-agent AI to understand real capabilities.
+            </p>
+          </div>
+          <div className={styles.problemGrid}>
+            <article className={styles.problemCard}>
+              <h3>Old Workflow</h3>
+              <ul>
+                <li>Keyword-only parsing</li>
+                <li>Generic career advice</li>
+                <li>No progress intelligence</li>
+                <li>Low recruiter trust in rankings</li>
+              </ul>
+            </article>
+            <article className={styles.problemCard}>
+              <h3>SkillBridge Workflow</h3>
+              <ul>
+                <li>Semantic skill extraction</li>
+                <li>Personalized gap analysis</li>
+                <li>Adaptive learning roadmap</li>
+                <li>Explainable match scoring</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section className={styles.engineSection}>
+          <div className={styles.sectionIntro}>
+            <span className={styles.kicker}>How It Works</span>
+            <h2>Four AI agents working as one growth engine.</h2>
+          </div>
+          <div className={styles.stepsGrid}>
+            {[
+              {
+                icon: <Sparkles size={20} />,
+                title: 'Extract',
+                text: 'Reads resumes and portfolios to identify explicit and hidden skills.',
+              },
+              {
+                icon: <Target size={20} />,
+                title: 'Analyze',
+                text: 'Measures skill gaps against live role requirements and market demand.',
+              },
+              {
+                icon: <BriefcaseBusiness size={20} />,
+                title: 'Roadmap',
+                text: 'Builds a personalized, milestone-based growth plan with clear priorities.',
+              },
+              {
+                icon: <CheckCircle2 size={20} />,
+                title: 'Track',
+                text: 'Continuously updates recommendations as users complete learning tasks.',
+              },
+            ].map((step) => (
+              <article key={step.title} className={styles.stepCard}>
+                <div className={styles.stepIcon}>{step.icon}</div>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </article>
             ))}
           </div>
+        </section>
 
-          <div style={{ textAlign: 'center', marginTop: 48 }}>
-            <Link href="/engine" className="btn-secondary">
-              Explore the Engine in Detail →
-            </Link>
+        <section className={styles.audienceSection}>
+          <article className={styles.audienceCard}>
+            <h3>For Individuals</h3>
+            <p>
+              Get a clear growth roadmap, track progress weekly, and close skill gaps with
+              recommendations built around your goals.
+            </p>
+            <Link href="/individuals">Explore Individual Plans <ArrowRight size={16} /></Link>
+          </article>
+          <article className={styles.audienceCard}>
+            <h3>For Recruiters</h3>
+            <p>
+              Identify qualified candidates faster with explainable matching and confidence
+              scores that your hiring team can trust.
+            </p>
+            <Link href="/recruiters">Explore Recruiter Tools <ArrowRight size={16} /></Link>
+          </article>
+        </section>
+
+        <section className={styles.metricsSection}>
+          {[
+            { value: '94%', label: 'Average skill-role match accuracy' },
+            { value: '3.2x', label: 'Faster shortlisting workflows' },
+            { value: '50K+', label: 'Skills mapped across profiles' },
+            { value: '98%', label: 'Recruiter confidence score' },
+          ].map((metric) => (
+            <article key={metric.label} className={styles.metricCard}>
+              <h3>{metric.value}</h3>
+              <p>{metric.label}</p>
+            </article>
+          ))}
+        </section>
+
+        <section className={styles.finalCta}>
+          <h2>Build career momentum with SkillBridge.</h2>
+          <p>Start with a free AI resume analysis and get your roadmap in minutes.</p>
+          <div className={styles.ctaRow}>
+            <Link href="/get-started" className={styles.primaryPill}>Start Free Analysis</Link>
+            <Link href="/pricing" className={styles.secondaryPill}>View Pricing</Link>
           </div>
-        </div>
-      </section>
-
-      {/* ═══ WHO IT'S FOR ═══ */}
-      <section style={{ position: 'relative' }}>
-        <div className="glow-orb" style={{ width: 400, height: 400, bottom: '10%', right: '5%', background: 'rgba(6,182,212,0.06)' }} />
-        <div className="section">
-          <div style={{ textAlign: 'center', marginBottom: 64 }}>
-            <div className="section-label">Built For</div>
-            <h2 className="section-title" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
-              Two Sides. <span className="gradient-text">One Bridge</span>
-            </h2>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 28 }}>
-            {/* Individuals */}
-            <div className="glass-card" style={{ padding: 40 }}>
-              <div style={{ marginBottom: 16, color: '#8b5cf6' }}>
-                <User size={36} />
-              </div>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: 12 }}>For Individuals</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: 24, lineHeight: 1.6 }}>
-                Get an adaptive, AI-driven career roadmap that evolves with you.
-                Track milestones, close skill gaps, and unlock new opportunities.
-              </p>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 28 }}>
-                {['Adaptive Learning Roadmap', 'Real-time milestone tracking', 'Curated course recommendations', 'Skill gap visualization'].map((f) => (
-                  <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                    <Check size={18} color="#34d399" style={{ flexShrink: 0, marginTop: 2 }} />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link href="/individuals" className="btn-secondary" style={{ width: '100%' }}>
-                Learn More →
-              </Link>
-            </div>
-
-            {/* Recruiters */}
-            <div className="glass-card" style={{ padding: 40 }}>
-              <div style={{ marginBottom: 16, color: '#06b6d4' }}>
-                <Building2 size={36} />
-              </div>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: 12 }}>For Recruiters</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: 24, lineHeight: 1.6 }}>
-                Precision talent matching that goes beyond keywords. Understand every candidate through explainable AI rankings your team can trust.
-              </p>
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 28 }}>
-                {['Precision Talent Matching', 'Explainable AI rankings', 'Bulk candidate analysis', 'Fairness-aware screening'].map((f) => (
-                  <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                    <Check size={18} color="#06b6d4" style={{ flexShrink: 0, marginTop: 2 }} />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link href="/recruiters" className="btn-secondary" style={{ width: '100%' }}>
-                Learn More →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ FINAL CTA ═══ */}
-      <section style={{ position: 'relative', overflow: 'hidden' }}>
-        <div className="glow-orb" style={{ width: 500, height: 500, top: '50%', left: '50%', transform: 'translate(-50%,-50%)', background: 'rgba(139,92,246,0.1)' }} />
-        <div className="section" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <div className="section-label">Ready?</div>
-          <h2 className="section-title" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
-            Your Career is <span className="gradient-text">Not Static</span>. Your Tools Shouldn&apos;t Be Either.
-          </h2>
-          <p className="section-subtitle" style={{ textAlign: 'center', marginBottom: 36 }}>
-            Join thousands of professionals and recruiters who are already building smarter career paths with SkillBridge.
-          </p>
-          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link href="/get-started" className="btn-primary" style={{ padding: '16px 40px', fontSize: '1rem' }}>
-              Start Your Free Audit
-            </Link>
-            <Link href="/pricing" className="btn-secondary" style={{ padding: '16px 40px', fontSize: '1rem' }}>
-              View Pricing
-            </Link>
-          </div>
-        </div>
-      </section>
-    </>
+        </section>
+      </div>
+    </div>
   );
 }

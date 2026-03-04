@@ -1,0 +1,472 @@
+.page {
+  min-height: 100vh;
+  background: #efefef;
+  color: #101010;
+}
+
+.shell {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 24px 44px 38px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  font-size: 14px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #222;
+}
+
+.brandText {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.brandMark {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #111;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.brandBarTop,
+.brandBarBottom {
+  width: 15px;
+  height: 2px;
+  background: #efefef;
+  border-radius: 99px;
+}
+
+.brandBarTop {
+  transform: translateY(-3px);
+}
+
+.brandBarBottom {
+  transform: translateY(3px);
+}
+
+.brandDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 99px;
+  background: #efefef;
+  position: absolute;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.navLinks a,
+.demoLink {
+  color: #2f2f2f;
+  text-decoration: none;
+}
+
+.activeNav {
+  font-weight: 700;
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.primaryPill,
+.secondaryPill {
+  border-radius: 999px;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 11px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.2s ease;
+}
+
+.primaryPill {
+  background: #121212;
+  color: #fff;
+}
+
+.secondaryPill {
+  border: 1px solid #202020;
+  color: #101010;
+}
+
+.primaryPill:hover,
+.secondaryPill:hover {
+  transform: translateY(-1px);
+}
+
+.kicker {
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid #cacaca;
+  color: #444;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 7px 12px;
+}
+
+.hero {
+  margin-top: 58px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.heroContent {
+  background: linear-gradient(150deg, #f7f7f7 0%, #ececec 100%);
+  border: 1px solid #d8d8d8;
+  border-radius: 30px;
+  padding: 34px;
+}
+
+.heroContent h1 {
+  margin-top: 14px;
+  font-size: clamp(34px, 5vw, 66px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.heroContent p {
+  margin-top: 14px;
+  color: #444;
+  max-width: 620px;
+  line-height: 1.58;
+  font-size: 17px;
+}
+
+.ctaRow {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.statRow {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.statRow div {
+  border: 1px solid #d3d3d3;
+  border-radius: 16px;
+  padding: 14px;
+  background: #fdfdfd;
+}
+
+.statRow strong {
+  display: block;
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1;
+}
+
+.statRow span {
+  display: block;
+  margin-top: 7px;
+  color: #515151;
+  font-size: 13px;
+}
+
+.rankCard {
+  border-radius: 30px;
+  border: 1px solid #d6d6d6;
+  background: #f9f9f9;
+  padding: 22px;
+}
+
+.rankHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 12px;
+}
+
+.rankList {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.rankItem {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid #dfdfdf;
+  background: #fff;
+}
+
+.rankNum {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #efefef;
+  border: 1px solid #d6d6d6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.rankItem h4 {
+  font-size: 15px;
+}
+
+.rankItem p {
+  font-size: 12px;
+  color: #636363;
+  margin-top: 2px;
+}
+
+.rankScore {
+  font-size: 18px;
+}
+
+.top {
+  color: #1f7a3b;
+}
+
+.good {
+  color: #224f9b;
+}
+
+.mid {
+  color: #666;
+}
+
+.benefitsSection,
+.workflowSection,
+.enterpriseSection,
+.bottomCta {
+  margin-top: 54px;
+}
+
+.sectionIntro {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 28px;
+}
+
+.sectionIntro h2 {
+  margin-top: 12px;
+  font-size: clamp(30px, 4.2vw, 52px);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+.benefitGrid,
+.workflowGrid,
+.enterpriseGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.benefitCard,
+.workflowCard,
+.enterpriseCard {
+  border: 1px solid #d7d7d7;
+  border-radius: 18px;
+  padding: 18px;
+  background: #f9f9f9;
+}
+
+.benefitIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: #f3f3f3;
+}
+
+.benefitCard h3,
+.workflowCard h3,
+.enterpriseCard h3 {
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.benefitCard p,
+.workflowCard p,
+.enterpriseCard p {
+  margin-top: 8px;
+  color: #4d4d4d;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.workflowCard span {
+  font-size: 12px;
+  color: #676767;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.workflowCard svg {
+  margin-top: 12px;
+  color: #222;
+}
+
+.enterpriseCard svg {
+  color: #222;
+}
+
+.bottomCta {
+  margin-top: 48px;
+}
+
+.ctaPanel {
+  border-radius: 24px;
+  border: 1px solid #252525;
+  background: #101010;
+  color: #f6f6f6;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.ctaText {
+  max-width: 720px;
+}
+
+.ctaText svg {
+  color: #8ec5ff;
+}
+
+.ctaText h3 {
+  margin-top: 10px;
+  font-size: clamp(28px, 3.5vw, 44px);
+  line-height: 1.1;
+}
+
+.ctaText p {
+  margin-top: 8px;
+  color: #cacaca;
+}
+
+.ctaActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ctaActions .secondaryPill {
+  border-color: #848484;
+  color: #f3f3f3;
+}
+
+@media (max-width: 1100px) {
+  .shell {
+    padding: 18px 18px 28px;
+  }
+
+  .navLinks,
+  .demoLink {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .benefitGrid,
+  .workflowGrid,
+  .enterpriseGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ctaPanel {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .page {
+    padding: 0 0 10px;
+  }
+
+  .hero {
+    margin-top: 30px;
+  }
+
+  .heroContent,
+  .rankCard {
+    border-radius: 20px;
+    padding: 18px;
+  }
+
+  .heroContent h1 {
+    font-size: clamp(30px, 8vw, 52px);
+  }
+
+  .heroContent p {
+    font-size: 15px;
+  }
+
+  .ctaRow,
+  .ctaActions {
+    width: 100%;
+  }
+
+  .primaryPill,
+  .secondaryPill {
+    width: 100%;
+  }
+
+  .statRow,
+  .benefitGrid,
+  .workflowGrid,
+  .enterpriseGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionIntro {
+    text-align: left;
+  }
+
+  .ctaPanel {
+    border-radius: 18px;
+    padding: 20px 16px;
+  }
+}

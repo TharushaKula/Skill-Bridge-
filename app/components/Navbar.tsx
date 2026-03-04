@@ -1,17 +1,18 @@
 'use client';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Zap } from 'lucide-react';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
   const links = [
-    { name: 'The Engine', href: '/engine' },
-    { name: 'Individuals', href: '/individuals' },
-    { name: 'Recruiters', href: '/recruiters' },
+    { name: 'Home', href: '/' },
+    { name: 'Engine', href: '/engine' },
+    { name: 'For Individuals', href: '/individuals' },
+    { name: 'For Recruiters', href: '/recruiters' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'FAQ', href: '/faq' },
   ];
@@ -20,19 +21,17 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-inner">
         <Link href="/" className="navbar-logo">
-          <div className="navbar-logo-icon">
-            <Zap size={20} fill="currentColor" />
+          <div className="brand-emblem" aria-hidden="true">
+            <span className="brand-emblem-line brand-emblem-line-top" />
+            <span className="brand-emblem-dot" />
+            <span className="brand-emblem-line brand-emblem-line-bottom" />
           </div>
           SkillBridge
         </Link>
 
         <button className="mobile-menu-btn" onClick={() => setOpen(!open)} aria-label="Menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2">
-            {open ? (
-              <path d="M6 6l12 12M6 18L18 6" />
-            ) : (
-              <path d="M4 6h16M4 12h16M4 18h16" />
-            )}
+            {open ? <path d="M6 6l12 12M6 18L18 6" /> : <path d="M4 6h16M4 12h16M4 18h16" />}
           </svg>
         </button>
 
@@ -41,11 +40,7 @@ export default function Navbar() {
             const isActive = pathname === link.href || (pathname?.startsWith(link.href) && link.href !== '/');
             return (
               <li key={link.name}>
-                <Link
-                  href={link.href}
-                  className={isActive ? 'active' : ''}
-                  onClick={() => setOpen(false)}
-                >
+                <Link href={link.href} className={isActive ? 'active' : ''} onClick={() => setOpen(false)}>
                   {link.name}
                 </Link>
               </li>

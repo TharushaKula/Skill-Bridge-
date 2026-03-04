@@ -1,235 +1,237 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import { Search, BarChart, Map, TrendingUp } from 'lucide-react';
+import Link from 'next/link';
+import {
+  ArrowRight,
+  BarChart3,
+  BrainCircuit,
+  CheckCircle2,
+  Database,
+  Layers,
+  Map,
+  Radar,
+  Search,
+  Sparkles,
+  TrendingUp,
+} from 'lucide-react';
+import styles from './engine.module.css';
 
 export const metadata = {
-    title: 'The Engine — SkillBridge Multi-Agent Architecture',
-    description: 'Discover how SkillBridge\'s four specialized AI agents — Extraction, Gap Analysis, Roadmap, and Tracker — work together to power your career evolution.',
+  title: 'The Engine — SkillBridge Multi-Agent Architecture',
+  description:
+    "Discover how SkillBridge's four specialized AI agents work together to power semantic skill mapping, gap intelligence, and adaptive career roadmaps.",
 };
 
+const agents = [
+  {
+    id: '01',
+    name: 'Extraction Agent',
+    icon: Search,
+    accent: 'violet',
+    summary:
+      'Parses resumes, portfolios, and role descriptions with semantic understanding instead of keyword matching.',
+    points: [
+      'Sentence-level skill interpretation',
+      'Role-context aware parsing',
+      'Transferable skill detection',
+    ],
+    tags: ['NLP Parsing', 'Sentence-BERT', 'Skill Taxonomy'],
+    image: '/images/platform-images/CV-Analyzer-page.png',
+    imageAlt: 'Skill extraction dashboard',
+  },
+  {
+    id: '02',
+    name: 'Gap Analysis Agent',
+    icon: BarChart3,
+    accent: 'cyan',
+    summary:
+      'Compares candidate profiles to market demand vectors and role requirements to identify priority gaps.',
+    points: [
+      'High-dimensional similarity scoring',
+      'Demand-weighted priority ranking',
+      'Explainable confidence breakdown',
+    ],
+    tags: ['Cosine Similarity', 'Demand Signals', 'Priority Scoring'],
+    image: '/images/EnginePage-AgentPipeline.png',
+    imageAlt: 'Gap intelligence pipeline view',
+  },
+  {
+    id: '03',
+    name: 'Roadmap Agent',
+    icon: Map,
+    accent: 'green',
+    summary:
+      'Builds adaptive learning roadmaps that close the highest-impact gaps first, with milestone checkpoints.',
+    points: [
+      'RAG-powered learning recommendations',
+      'Milestone-based growth sequence',
+      'Outcome-focused resource curation',
+    ],
+    tags: ['RAG Pipeline', 'Path Planning', 'Course Matching'],
+    image: '/images/platform-images/roadmap-page.png',
+    imageAlt: 'Personalized roadmap dashboard',
+  },
+  {
+    id: '04',
+    name: 'Tracker Agent',
+    icon: TrendingUp,
+    accent: 'amber',
+    summary:
+      'Monitors progress over time, recalibrates recommendations, and keeps roadmaps aligned with market shifts.',
+    points: [
+      'Real-time progress analytics',
+      'Adaptive recommendation updates',
+      'Plateau and risk detection',
+    ],
+    tags: ['Progress Signals', 'Market Drift', 'Auto Recalibration'],
+    image: '/images/platform-images/CV-Analyzer-page.png',
+    imageAlt: 'Progress and tracking analytics',
+  },
+];
+
+const outcomes = [
+  { value: '94%', label: 'Semantic matching accuracy' },
+  { value: '3.2x', label: 'Faster hiring shortlist cycle' },
+  { value: '50K+', label: 'Skills mapped across profiles' },
+  { value: '98%', label: 'Recruiter trust confidence' },
+];
+
+const techChips = [
+  { icon: BrainCircuit, label: 'Semantic AI Models' },
+  { icon: Radar, label: 'Market Signal Intelligence' },
+  { icon: Layers, label: 'Multi-Agent Orchestration' },
+  { icon: Database, label: 'Live Skills Knowledge Base' },
+];
+
 export default function EnginePage() {
-    return (
-        <>
-            {/* Hero */}
-            <section style={{ position: 'relative', minHeight: '70vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-                {/* Background Image & Overlay */}
-                <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-                    <Image
-                        src="/images/EnginePage-AgentPipeline.png"
-                        alt="SkillBridge Agent Pipeline"
-                        fill
-                        priority
-                        style={{ objectFit: 'cover', objectPosition: 'center' }}
-                        quality={90}
-                    />
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,15,0.85) 0%, rgba(6,6,15,0.6) 40%, rgba(6,6,15,0.95) 100%)' }} />
-                </div>
+  return (
+    <div className={styles.page}>
+      <section className={styles.hero}>
+        <div className={styles.heroGlow} aria-hidden="true" />
+        <div className={styles.heroGrid} aria-hidden="true" />
 
-                <div className="glow-orb" style={{ width: 500, height: 500, top: '-5%', left: '40%', background: 'rgba(139,92,246,0.15)', zIndex: 1 }} />
-                <div className="bg-grid" style={{ position: 'absolute', inset: 0, zIndex: 1, opacity: 0.5 }} />
-                <div className="section animate-fade-up" style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 140, zIndex: 2 }}>
-                    <div className="section-label">Under the Hood</div>
-                    <h1 className="section-title" style={{ maxWidth: 760 }}>
-                        The <span className="gradient-text">Multi-Agent Engine</span> Powering Your Growth
-                    </h1>
-                    <p className="section-subtitle" style={{ textAlign: 'center', maxWidth: 620 }}>
-                        Four specialized AI agents working in concert — each with a unique role, collaborating through a unified pipeline to deliver precision career intelligence.
-                    </p>
-                </div>
-            </section>
+        <div className={styles.heroInner}>
+          <span className={styles.kicker}>Under The Hood</span>
+          <h1>The Multi-Agent Engine Powering Career Intelligence</h1>
+          <p>
+            SkillBridge orchestrates four specialized AI agents to transform static
+            resumes into actionable skill intelligence, adaptive roadmaps, and
+            high-confidence talent matching.
+          </p>
 
-            {/* Pipeline Visualization */}
-            <section style={{ position: 'relative' }}>
-                <div className="section">
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+          <div className={styles.heroActions}>
+            <Link href="/get-started" className={styles.primaryButton}>
+              Try The Engine <ArrowRight size={16} />
+            </Link>
+            <Link href="/pricing" className={styles.secondaryButton}>
+              View Pricing
+            </Link>
+          </div>
+        </div>
+      </section>
 
-                        {/* Agent 1: Extraction */}
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', padding: '60px 0' }} className="engine-row">
-                            <div className="animate-fade-up">
-                                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                                    <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'rgba(139,92,246,0.12)', border: '1px solid rgba(139,92,246,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                        <Search size={24} color="#8b5cf6" />
-                                    </div>
-                                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--violet-400)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Agent 01</span>
-                                </div>
-                                <h3 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: 12 }}>Extraction Agent</h3>
-                                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 20 }}>
-                                    Goes beyond keyword parsing. Using advanced NLP with Sentence-BERT, this agent builds rich semantic
-                                    skill profiles from CVs and resumes — understanding context, proficiency levels, and transferable competencies.
-                                </p>
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                                    {['NLP Parsing', 'Sentence-BERT', 'Semantic Embedding', 'Context Mapping'].map((t) => (
-                                        <span key={t} className="glass-subtle" style={{ padding: '6px 14px', fontSize: '0.78rem', color: 'var(--violet-300)', fontWeight: 500 }}>{t}</span>
-                                    ))}
-                                </div>
-                            </div>
-                            <div className="animate-fade-up-delay-1 huly-window">
-                                <div className="huly-window-header">
-                                    <div className="huly-dot" style={{ background: '#ff5f56' }} />
-                                    <div className="huly-dot" style={{ background: '#ffbd2e' }} />
-                                    <div className="huly-dot" style={{ background: '#27c93f' }} />
-                                </div>
-                                <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
-                                    <Image
-                                        src="/images/platform-images/CV-Analyzer-page.png"
-                                        alt="CV Analyzer Platform Screenshot"
-                                        fill
-                                        style={{ objectFit: 'contain', objectPosition: 'top' }}
-                                    />
-                                </div>
-                            </div>
-                        </div>
+      <section className={styles.pipelineSection}>
+        <div className={styles.sectionHeading}>
+          <span className={styles.kicker}>Pipeline</span>
+          <h2>How agents collaborate from profile to outcome</h2>
+        </div>
 
-                        {/* Connector */}
-                        <div style={{ display: 'flex', justifyContent: 'center', padding: '8px 0' }}>
-                            <div style={{ width: 2, height: 48, background: 'linear-gradient(to bottom, var(--violet-500), var(--cyan-400))', borderRadius: 2 }} />
-                        </div>
-
-                        {/* Agent 2: Gap Analysis */}
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', padding: '60px 0' }} className="engine-row">
-                            <div className="glass-card animate-fade-up" style={{ padding: 32, order: 0 }}>
-                                <div style={{ marginBottom: 20, fontWeight: 700, fontSize: '0.85rem', color: 'var(--text-muted)' }}>Gap Analysis Matrix</div>
-                                {[
-                                    { skill: 'Cloud Architecture', yours: 34, market: 85, gap: 'High' },
-                                    { skill: 'MLOps', yours: 22, market: 78, gap: 'Critical' },
-                                    { skill: 'System Design', yours: 45, market: 82, gap: 'Medium' },
-                                    { skill: 'Python', yours: 92, market: 88, gap: 'None' },
-                                ].map((r) => (
-                                    <div key={r.skill} style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-                                        <span style={{ width: 130, fontSize: '0.82rem', color: 'var(--text-secondary)', flexShrink: 0 }}>{r.skill}</span>
-                                        <div style={{ flex: 1, height: 6, borderRadius: 3, background: 'rgba(255,255,255,0.05)', position: 'relative', overflow: 'hidden' }}>
-                                            <div style={{ height: '100%', borderRadius: 3, width: `${r.yours}%`, background: r.gap === 'None' ? '#34d399' : r.gap === 'Critical' ? '#fb7185' : '#fbbf24', transition: 'width 1s ease' }} />
-                                        </div>
-                                        <span style={{ fontSize: '0.72rem', fontWeight: 600, color: r.gap === 'None' ? '#34d399' : r.gap === 'Critical' ? '#fb7185' : '#fbbf24', width: 55, textAlign: 'right' }}>{r.gap}</span>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="animate-fade-up-delay-1" style={{ order: 1 }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                                    <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'rgba(6,182,212,0.12)', border: '1px solid rgba(6,182,212,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                        <BarChart size={24} color="#06b6d4" />
-                                    </div>
-                                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--cyan-400)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Agent 02</span>
-                                </div>
-                                <h3 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: 12 }}>Gap Analysis Agent</h3>
-                                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 20 }}>
-                                    Compares your semantic skill profile against real-time market demands using high-dimensional embeddings.
-                                    Identifies not just missing skills, but the priority and impact of each gap on your career trajectory.
-                                </p>
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                                    {['Cosine Similarity', 'Market Demand API', 'Priority Scoring', 'Impact Analysis'].map((t) => (
-                                        <span key={t} className="glass-subtle" style={{ padding: '6px 14px', fontSize: '0.78rem', color: 'var(--cyan-400)', fontWeight: 500 }}>{t}</span>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Connector */}
-                        <div style={{ display: 'flex', justifyContent: 'center', padding: '8px 0' }}>
-                            <div style={{ width: 2, height: 48, background: 'linear-gradient(to bottom, var(--cyan-400), var(--emerald-400))', borderRadius: 2 }} />
-                        </div>
-
-                        {/* Agent 3: Roadmap */}
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', padding: '60px 0' }} className="engine-row">
-                            <div className="animate-fade-up">
-                                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                                    <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'rgba(52,211,153,0.12)', border: '1px solid rgba(52,211,153,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                        <Map size={24} color="#34d399" />
-                                    </div>
-                                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#34d399', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Agent 03</span>
-                                </div>
-                                <h3 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: 12 }}>Roadmap Agent</h3>
-                                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 20 }}>
-                                    Generates personalized, adaptive learning roadmaps using RAG (Retrieval-Augmented Generation).
-                                    Curates resources from Coursera, Udemy, YouTube, and open-source platforms — tailored to your specific gaps.
-                                </p>
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                                    {['RAG Pipeline', 'Coursera API', 'Udemy API', 'Adaptive Paths'].map((t) => (
-                                        <span key={t} className="glass-subtle" style={{ padding: '6px 14px', fontSize: '0.78rem', color: '#34d399', fontWeight: 500 }}>{t}</span>
-                                    ))}
-                                </div>
-                            </div>
-                            <div className="animate-fade-up-delay-1 huly-window">
-                                <div className="huly-window-header">
-                                    <div className="huly-dot" style={{ background: '#ff5f56' }} />
-                                    <div className="huly-dot" style={{ background: '#ffbd2e' }} />
-                                    <div className="huly-dot" style={{ background: '#27c93f' }} />
-                                </div>
-                                <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
-                                    <Image
-                                        src="/images/platform-images/roadmap-page.png"
-                                        alt="Skill Roadmap Platform Screenshot"
-                                        fill
-                                        style={{ objectFit: 'contain', objectPosition: 'top' }}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Connector */}
-                        <div style={{ display: 'flex', justifyContent: 'center', padding: '8px 0' }}>
-                            <div style={{ width: 2, height: 48, background: 'linear-gradient(to bottom, var(--emerald-400), var(--amber-400))', borderRadius: 2 }} />
-                        </div>
-
-                        {/* Agent 4: Tracker */}
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center', padding: '60px 0' }} className="engine-row">
-                            <div className="glass-card animate-fade-up" style={{ padding: 32, order: 0 }}>
-                                <div style={{ fontWeight: 700, fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: 16 }}>Progress Dashboard</div>
-                                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-                                    {[
-                                        { label: 'Skills Acquired', val: '12/23', pct: 52, color: '#34d399' },
-                                        { label: 'Courses Done', val: '8/14', pct: 57, color: '#8b5cf6' },
-                                        { label: 'Market Readiness', val: '67%', pct: 67, color: '#06b6d4' },
-                                        { label: 'Recalibrations', val: '3', pct: 100, color: '#fbbf24' },
-                                    ].map((s) => (
-                                        <div key={s.label} className="glass-subtle" style={{ padding: 16, textAlign: 'center' }}>
-                                            <div style={{ fontSize: '1.4rem', fontWeight: 800, color: s.color }}>{s.val}</div>
-                                            <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: 4 }}>{s.label}</div>
-                                            <div style={{ height: 3, borderRadius: 2, background: 'rgba(255,255,255,0.05)', marginTop: 8 }}>
-                                                <div style={{ height: '100%', borderRadius: 2, width: `${s.pct}%`, background: s.color }} />
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                            <div className="animate-fade-up-delay-1" style={{ order: 1 }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
-                                    <div style={{ width: 48, height: 48, borderRadius: 'var(--radius-md)', background: 'rgba(251,191,36,0.12)', border: '1px solid rgba(251,191,36,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                        <TrendingUp size={24} color="#fbbf24" />
-                                    </div>
-                                    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#fbbf24', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Agent 04</span>
-                                </div>
-                                <h3 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: 12 }}>Tracker Agent</h3>
-                                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 20 }}>
-                                    Continuously monitors your progress and recalibrates recommendations based on real-time market data.
-                                    Celebrates milestones, identifies plateaus, and ensures your roadmap stays aligned with evolving industry demands.
-                                </p>
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                                    {['Real-time Tracking', 'Market Recalibration', 'Milestone Alerts', 'Plateau Detection'].map((t) => (
-                                        <span key={t} className="glass-subtle" style={{ padding: '6px 14px', fontSize: '0.78rem', color: '#fbbf24', fontWeight: 500 }}>{t}</span>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
+        <div className={styles.pipelineRail}>
+          {agents.map((agent, index) => {
+            const Icon = agent.icon;
+            const isEven = index % 2 === 1;
+            return (
+              <article
+                key={agent.id}
+                className={`${styles.agentCard} ${styles[agent.accent]} ${isEven ? styles.reverse : ''}`}
+              >
+                <div className={styles.agentText}>
+                  <div className={styles.agentHeader}>
+                    <span className={styles.agentId}>Agent {agent.id}</span>
+                    <div className={styles.agentIconWrap}>
+                      <Icon size={18} />
                     </div>
+                  </div>
 
-                    {/* CTA */}
-                    <div style={{ textAlign: 'center', marginTop: 48 }}>
-                        <Link href="/get-started" className="btn-primary" style={{ padding: '16px 40px', fontSize: '1rem' }}>
-                            Experience the Engine →
-                        </Link>
-                    </div>
+                  <h3>{agent.name}</h3>
+                  <p>{agent.summary}</p>
+
+                  <ul>
+                    {agent.points.map((point) => (
+                      <li key={point}>
+                        <CheckCircle2 size={16} />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className={styles.tags}>
+                    {agent.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Responsive styles for engine rows */}
-                <style>{`
-          @media (max-width: 768px) {
-            .engine-row { grid-template-columns: 1fr !important; }
-            .engine-row > *:first-child { order: 0 !important; }
-            .engine-row > *:last-child { order: 1 !important; }
-          }
-        `}</style>
-            </section>
-        </>
-    );
+                <div className={styles.agentVisual}>
+                  <div className={styles.windowChrome}>
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                  <div className={styles.agentImageWrap}>
+                    <Image src={agent.image} alt={agent.imageAlt} fill className={styles.agentImage} />
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className={styles.techSection}>
+        <div className={styles.sectionHeading}>
+          <span className={styles.kicker}>Architecture</span>
+          <h2>Built for scale, explainability, and adaptation</h2>
+        </div>
+
+        <div className={styles.techGrid}>
+          {techChips.map((chip) => {
+            const Icon = chip.icon;
+            return (
+              <article key={chip.label} className={styles.techCard}>
+                <Icon size={20} />
+                <span>{chip.label}</span>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className={styles.outcomesSection}>
+        <div className={styles.sectionHeading}>
+          <span className={styles.kicker}>Outcomes</span>
+          <h2>Measured impact from the engine</h2>
+        </div>
+
+        <div className={styles.outcomeGrid}>
+          {outcomes.map((outcome) => (
+            <article key={outcome.label} className={styles.outcomeCard}>
+              <strong>{outcome.value}</strong>
+              <span>{outcome.label}</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.finalCta}>
+        <div className={styles.finalCtaInner}>
+          <Sparkles size={20} />
+          <h3>See SkillBridge Engine on your own profile</h3>
+          <p>Run a free analysis and get a personalized skill-gap roadmap in minutes.</p>
+          <Link href="/get-started" className={styles.primaryButton}>
+            Get Started Free <ArrowRight size={16} />
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
 }
