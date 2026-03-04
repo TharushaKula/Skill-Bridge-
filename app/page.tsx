@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import styles from './page.module.css';
 import CursorGlow from './components/CursorGlow';
+import HomeScrollReveal from './components/HomeScrollReveal';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -31,8 +32,9 @@ export default function Home() {
   return (
     <div className={`${styles.page} ${fraunces.variable} ${manrope.variable}`}>
       <CursorGlow glowClassName={styles.cursorGlow} gridClassName={styles.cursorGrid} />
+      <HomeScrollReveal />
       <div className={styles.shell}>
-        <section className={styles.hero}>
+        <section className={styles.hero} data-reveal="up">
           <h1>AI-Driven Career Growth Right Away</h1>
           <p>
             From resume to roadmap - map your skills, identify your gaps,
@@ -45,7 +47,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.visualStage}>
+        <section className={styles.visualStage} data-reveal="up" data-reveal-delay="80">
           <div className={styles.arcOne} />
           <div className={styles.arcTwo} />
           <div className={styles.arcThree} />
@@ -140,14 +142,14 @@ export default function Home() {
           </article>
         </section>
 
-        <section className={styles.brandStrip} aria-label="Trusted brands">
+        <section className={styles.brandStrip} aria-label="Trusted brands" data-reveal="up" data-reveal-delay="120">
           {['Talent Teams', 'EdTech Partners', 'Hiring Managers', 'Career Coaches', 'Bootcamps', 'Universities', 'HR Platforms', 'Recruiters', 'Learners'].map((brand) => (
             <span key={brand}>{brand}</span>
           ))}
         </section>
 
-        <section className={styles.problemSection}>
-          <div className={styles.sectionIntro}>
+        <section className={styles.problemSection} data-reveal="up">
+          <div className={styles.sectionIntro} data-reveal="up" data-reveal-delay="40">
             <span className={styles.kicker}>The Problem</span>
             <h2>Most resumes are static. Career growth is not.</h2>
             <p>
@@ -156,7 +158,7 @@ export default function Home() {
             </p>
           </div>
           <div className={styles.problemGrid}>
-            <article className={styles.problemCard}>
+            <article className={styles.problemCard} data-reveal="left" data-reveal-delay="80">
               <h3>Old Workflow</h3>
               <ul>
                 <li>Keyword-only parsing</li>
@@ -165,7 +167,7 @@ export default function Home() {
                 <li>Low recruiter trust in rankings</li>
               </ul>
             </article>
-            <article className={styles.problemCard}>
+            <article className={styles.problemCard} data-reveal="right" data-reveal-delay="130">
               <h3>SkillBridge Workflow</h3>
               <ul>
                 <li>Semantic skill extraction</li>
@@ -177,8 +179,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.engineSection}>
-          <div className={styles.sectionIntro}>
+        <section className={styles.engineSection} data-reveal="up">
+          <div className={styles.sectionIntro} data-reveal="up" data-reveal-delay="40">
             <span className={styles.kicker}>How It Works</span>
             <h2>Four AI agents working as one growth engine.</h2>
           </div>
@@ -204,8 +206,8 @@ export default function Home() {
                 title: 'Track',
                 text: 'Continuously updates recommendations as users complete learning tasks.',
               },
-            ].map((step) => (
-              <article key={step.title} className={styles.stepCard}>
+            ].map((step, index) => (
+              <article key={step.title} className={styles.stepCard} data-reveal="up" data-reveal-delay={String(70 + index * 55)}>
                 <div className={styles.stepIcon}>{step.icon}</div>
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
@@ -214,8 +216,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.audienceSection}>
-          <article className={styles.audienceCard}>
+        <section className={styles.audienceSection} data-reveal="up">
+          <article className={styles.audienceCard} data-reveal="left" data-reveal-delay="60">
             <h3>For Individuals</h3>
             <p>
               Get a clear growth roadmap, track progress weekly, and close skill gaps with
@@ -223,7 +225,7 @@ export default function Home() {
             </p>
             <Link href="/individuals">Explore Individual Plans <ArrowRight size={16} /></Link>
           </article>
-          <article className={styles.audienceCard}>
+          <article className={styles.audienceCard} data-reveal="right" data-reveal-delay="110">
             <h3>For Recruiters</h3>
             <p>
               Identify qualified candidates faster with explainable matching and confidence
@@ -233,21 +235,21 @@ export default function Home() {
           </article>
         </section>
 
-        <section className={styles.metricsSection}>
+        <section className={styles.metricsSection} data-reveal="up">
           {[
             { value: '94%', label: 'Average skill-role match accuracy' },
             { value: '3.2x', label: 'Faster shortlisting workflows' },
             { value: '50K+', label: 'Skills mapped across profiles' },
             { value: '98%', label: 'Recruiter confidence score' },
-          ].map((metric) => (
-            <article key={metric.label} className={styles.metricCard}>
+          ].map((metric, index) => (
+            <article key={metric.label} className={styles.metricCard} data-reveal="up" data-reveal-delay={String(45 + index * 45)}>
               <h3>{metric.value}</h3>
               <p>{metric.label}</p>
             </article>
           ))}
         </section>
 
-        <section className={styles.finalCta}>
+        <section className={styles.finalCta} data-reveal="up" data-reveal-delay="40">
           <h2>Build career momentum with SkillBridge.</h2>
           <p>Start with a free AI resume analysis and get your roadmap in minutes.</p>
           <div className={styles.ctaRow}>
