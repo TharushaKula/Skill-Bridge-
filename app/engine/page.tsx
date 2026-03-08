@@ -83,7 +83,7 @@ const agents = [
       'Plateau and risk detection',
     ],
     tags: ['Progress Signals', 'Market Drift', 'Auto Recalibration'],
-    image: '/images/platform-images/CV-Analyzer-page.png',
+    image: '/images/platform-images/tracker-agent.png',
     imageAlt: 'Progress and tracking analytics',
   },
 ];
