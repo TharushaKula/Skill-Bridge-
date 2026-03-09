@@ -34,7 +34,7 @@ const agents = [
       'Role-context aware parsing',
       'Transferable skill detection',
     ],
-    tags: ['NLP Parsing', 'Sentence-BERT', 'Skill Taxonomy'],
+    tags: ['NLP Parsing', 'Sentence-BERT', 'Skill Gap Analysis'],
     image: '/images/platform-images/CV-Analyzer-page.png',
     imageAlt: 'Skill extraction dashboard',
   },
@@ -66,7 +66,7 @@ const agents = [
       'Milestone-based growth sequence',
       'Outcome-focused resource curation',
     ],
-    tags: ['RAG Pipeline', 'Path Planning', 'Course Matching'],
+    tags: ['RAG Pipeline', 'Path Planning', 'Skill Gap Analysis'],
     image: '/images/platform-images/roadmap-page.png',
     imageAlt: 'Personalized roadmap dashboard',
   },
@@ -82,7 +82,7 @@ const agents = [
       'Adaptive recommendation updates',
       'Plateau and risk detection',
     ],
-    tags: ['Progress Signals', 'Market Drift', 'Auto Recalibration'],
+    tags: ['Progress Signals', 'AI Resume Analyzer', 'Auto Recalibration'],
     image: '/images/platform-images/tracker-agent.png',
     imageAlt: 'Progress and tracking analytics',
   },
@@ -113,9 +113,7 @@ export default function EnginePage() {
           <span className={styles.kicker}>Under The Hood</span>
           <h1>The Multi-Agent Engine Powering Career Intelligence</h1>
           <p>
-            SkillBridge orchestrates four specialized AI agents to transform static
-            resumes into actionable skill intelligence, adaptive roadmaps, and
-            high-confidence talent matching.
+            SkillBridge orchestrates four specialized AI agents, serving as a powerful AI resume analyzer and deep skill gap analysis engine, to transform static resumes into actionable intelligence, adaptive roadmaps, and high-confidence talent matching.
           </p>
 
           <div className={styles.heroActions}>

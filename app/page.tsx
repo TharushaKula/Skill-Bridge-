@@ -35,10 +35,10 @@ export default function Home() {
       <HomeScrollReveal />
       <div className={styles.shell}>
         <section className={styles.hero} data-reveal="up">
-          <h1>AI-Driven Career Growth Right Away</h1>
+          <h1>Powerful AI Resume Analyzer for Career Growth</h1>
           <p>
-            From resume to roadmap - map your skills, identify your gaps,
-            and grow with personalized learning plans.
+            From static profile to dynamic roadmap. Run a comprehensive skill gap analysis,
+            map your true capabilities, and grow with personalized learning plans.
           </p>
 
           <div className={styles.ctaRow}>
