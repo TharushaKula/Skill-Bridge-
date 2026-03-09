@@ -177,6 +177,24 @@
   border: 0;
 }
 
+.fallbackLink {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.fallbackLink a {
+  color: #111;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.fallbackLink a:hover {
+  text-decoration: none;
+}
+
 .row2 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

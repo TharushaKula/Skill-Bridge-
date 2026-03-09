@@ -90,19 +90,27 @@ export default function GetStartedClient() {
               </div>
 
               {flow === 'individual' ? (
-                <div className={styles.embedWrap}>
-                  <iframe
-                    src="https://docs.google.com/forms/d/e/1FAIpQLSf5D48OvoFEY9tsc8ohdxQ05qmR1TBV4XWwpV6WyJSojvaKow/viewform?embedded=true"
-                    title="SkillBridge Individual Skill Audit Form"
-                    width="100%"
-                    height="860"
-                    frameBorder={0}
-                    marginHeight={0}
-                    marginWidth={0}
-                  >
-                    Loading...
-                  </iframe>
-                </div>
+                <>
+                  <div className={styles.embedWrap}>
+                    <iframe
+                      src="https://docs.google.com/forms/d/e/1FAIpQLSf5D48OvoFEY9tsc8ohdxQ05qmR1TBV4XWwpV6WyJSojvaKow/viewform?embedded=true"
+                      title="SkillBridge Individual Skill Audit Form"
+                      width="100%"
+                      height="860"
+                      frameBorder={0}
+                      marginHeight={0}
+                      marginWidth={0}
+                    >
+                      Loading...
+                    </iframe>
+                  </div>
+                  <div className={styles.fallbackLink}>
+                    Having trouble viewing the form?{' '}
+                    <a href="https://forms.gle/pVkDkCVhtgRsMtBD6" target="_blank" rel="noopener noreferrer">
+                      Click here to open it directly
+                    </a>
+                  </div>
+                </>
               ) : (
                 <form onSubmit={handleSubmit} className={styles.formGrid}>
                   <div className={styles.row2}>
