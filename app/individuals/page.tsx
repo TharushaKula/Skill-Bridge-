@@ -90,7 +90,7 @@ export default function IndividualsPage() {
             </p>
             <div className={styles.ctaRow}>
               <Link href="/get-started" className={styles.primaryPill}>Start Free Skill Audit</Link>
-              <Link href="/engine" className={styles.secondaryPill}>See The Engine</Link>
+              <Link href="/how-it-works" className={styles.secondaryPill}>See The Engine</Link>
             </div>
             <div className={styles.statRow}>
               <div><strong>94%</strong><span>Matching accuracy</span></div>

@@ -88,7 +88,7 @@ export default function RecruitersPage() {
             </p>
             <div className={styles.ctaRow}>
               <Link href="/get-started" className={styles.primaryPill}>Request Enterprise Demo</Link>
-              <Link href="/engine" className={styles.secondaryPill}>Explore The Engine</Link>
+              <Link href="/how-it-works" className={styles.secondaryPill}>Explore The Engine</Link>
             </div>
             <div className={styles.statRow}>
               <div><strong>92.3%</strong><span>Recruiter trust score</span></div>

@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-col">
             <h4>Platform</h4>
-            <Link href="/engine">The Engine</Link>
+            <Link href="/how-it-works">How it works</Link>
             <Link href="/individuals">For Individuals</Link>
             <Link href="/recruiters">For Recruiters</Link>
             <Link href="/pricing">Pricing</Link>
@@ -47,8 +47,8 @@ export default function Footer() {
             <h4>Use Cases</h4>
             <Link href="/individuals">Career Upskilling</Link>
             <Link href="/recruiters">Candidate Matching</Link>
-            <Link href="/engine">Skill Gap Analysis</Link>
-            <Link href="/engine">Learning Path Automation</Link>
+            <Link href="/how-it-works">Skill Gap Analysis</Link>
+            <Link href="/how-it-works">Learning Path Automation</Link>
           </div>
 
           <div className="footer-col">

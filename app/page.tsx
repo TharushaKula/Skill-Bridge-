@@ -43,7 +43,7 @@ export default function Home() {
 
           <div className={styles.ctaRow}>
             <Link href="/get-started" className={styles.primaryPill}>Analyze Resume Free</Link>
-            <Link href="/engine" className={styles.secondaryPill}>See How It Works</Link>
+            <Link href="/how-it-works" className={styles.secondaryPill}>See How It Works</Link>
           </div>
         </section>
 
